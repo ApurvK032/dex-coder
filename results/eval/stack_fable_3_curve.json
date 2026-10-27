@@ -1,0 +1,27 @@
+{
+ "run_id": "stack_fable_3",
+ "points": [
+  {
+   "trial": 1,
+   "turn": 13,
+   "version": 1,
+   "cost_usd_so_far": 2.1215,
+   "practice": [
+    10,
+    10
+   ],
+   "test_nominal": 0.9333333333333333
+  },
+  {
+   "trial": 2,
+   "turn": 38,
+   "version": 12,
+   "cost_usd_so_far": 4.3443,
+   "practice": [
+    20,
+    20
+   ],
+   "test_nominal": 0.9666666666666667
+  }
+ ]
+}

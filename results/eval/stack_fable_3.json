@@ -1,0 +1,83 @@
+{
+ "controller": "/home/apurv/claude-code/dex-coder/outputs/runs/stack_fable_3/controller.py",
+ "kind": "stack",
+ "mode": "state",
+ "seeds": [
+  300000,
+  300099,
+  100
+ ],
+ "variants": {
+  "nominal": {
+   "successes": 95,
+   "n": 100,
+   "rate": 0.95,
+   "ci95": [
+    0.888,
+    0.978
+   ],
+   "outcomes": {
+    "success": 95,
+    "dropped": 3,
+    "timeout": 2
+   },
+   "wall_s": 28.5
+  },
+  "heavy_slippery": {
+   "successes": 93,
+   "n": 100,
+   "rate": 0.93,
+   "ci95": [
+    0.863,
+    0.966
+   ],
+   "outcomes": {
+    "success": 93,
+    "dropped": 4,
+    "timeout": 3
+   },
+   "wall_s": 32.7
+  },
+  "weak_motors": {
+   "successes": 92,
+   "n": 100,
+   "rate": 0.92,
+   "ci95": [
+    0.85,
+    0.959
+   ],
+   "outcomes": {
+    "success": 92,
+    "dropped": 7,
+    "timeout": 1
+   },
+   "wall_s": 26.9
+  },
+  "noisy_sensing": {
+   "successes": 92,
+   "n": 100,
+   "rate": 0.92,
+   "ci95": [
+    0.85,
+    0.959
+   ],
+   "outcomes": {
+    "success": 92,
+    "timeout": 5,
+    "dropped": 3
+   },
+   "wall_s": 35.5
+  }
+ },
+ "code_flags": [],
+ "run_id": "stack_fable_3",
+ "provenance": {
+  "time": "2026-10-27T18:34:26-0500",
+  "git_commit": "30ec2d8eb8d853963a96f0a3e2047ed6e28828cb",
+  "git_dirty": false,
+  "humanoid_vla_commit": "f5df5026fba3287ea3a455c3c73d9ef503bb9483",
+  "mujoco": "3.14.0",
+  "python": "3.12.3",
+  "host": "godzilla"
+ }
+}

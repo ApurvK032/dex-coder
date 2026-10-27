@@ -1,0 +1,122 @@
+{
+ "config": {
+  "run_id": "stack_opus_2",
+  "kind": "stack",
+  "model": "claude-opus-5-5",
+  "max_turns": 40,
+  "max_usd": 6.0,
+  "effort": "high",
+  "max_wall_s": 10800,
+  "workers": 4
+ },
+ "end_reason": "submitted",
+ "submitted": true,
+ "notes": "Top-down pinch stacking controller for the G1 right arm and Dex3 hand.\n- Inverse kinematics: damped least squares on a private MjData built from robot.model. It solves for grasp_site position plus a palm-down orientation, with site x set by a chosen yaw. Null-space terms pull toward a nominal posture and away from joint limits. Commands are rate-limited to 0.08 rad per step.\n- Planning: picks the grasp yaw from cube yaw + k*90\u00b0 and the place yaw from the yaw that lines the top cube up with the bottom one, + k*90\u00b0. Each candidate is solved by IK from several seed postures, for both the hover pose and the low pose. Scoring uses joint-limit margin and collision depth between arm and torso (or table), checked with mj_forward on the kin model. It also penalises yaws where another cube sits where the fingers sweep (+x) or where the thumb hangs (-x).\n- Phases: joint-space smoothstep move to hover; Cartesian descend to the cube centre, shifted 8 mm toward the fingers to give the thumb more room; close over 0.6 s; lift; check the cube is held (up to 4 attempts). Then a joint-space carry above the destination, corrected by the cube's measured offset in the hand; slow Cartesian lower with the offset frozen near contact; open over 0.8 s while rising 1 cm; retreat. While moving in Cartesian space, an integral term corrects servo sag and position error.\n- Descent stall check: if the hand stops more than 1.2 cm above the grasp height (it has landed on the cube), it lifts and plans again.\nTest results (my own harness, which rebuilds the held-out physics variants):\n- nominal: about 95%\n- heavy_slippery: 25/25\n- weak_motors: 24/25\n- noisy_sensing: about 88%\nThe final release settings (press 0, rise 1 cm) were chosen from one comparison that had only a 1-episode margin. Overall they scored 29/33 against 28/33 for the previous settings: better under noisy sensing, slightly worse on nominal.\nKnown weaknesses:\n- The two-finger pinch can let the cube tilt in the hand by up to about 30\u00b0. A strongly tilted cube can topple off the bottom cube when it is released (practice seed 100069 fails this way every time).\n- Under noisy sensing the cube position bias, about 4 mm, sometimes leaves the cube off-centre and it slides off when the fingers open.\n- Cubes very close to the torso or tightly clustered can need regrasps.",
+ "turns": 40,
+ "cost_usd": 1.8979,
+ "usage": {
+  "input_tokens": 160,
+  "output_tokens": 48067,
+  "cache_creation_input_tokens": 97842,
+  "cache_read_input_tokens": 2233622
+ },
+ "versions": 14,
+ "trials": [
+  {
+   "k": 1,
+   "version": 1,
+   "turn": 4,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009
+   ],
+   "successes": 1,
+   "n": 10,
+   "outcomes": {
+    "timeout": 9,
+    "success": 1
+   },
+   "cost_usd_so_far": 0.1864,
+   "wall_s": 9.3
+  },
+  {
+   "k": 2,
+   "version": 2,
+   "turn": 9,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009
+   ],
+   "successes": 9,
+   "n": 10,
+   "outcomes": {
+    "success": 9,
+    "timeout": 1
+   },
+   "cost_usd_so_far": 0.4452,
+   "wall_s": 4.3
+  },
+  {
+   "k": 3,
+   "version": 5,
+   "turn": 20,
+   "seeds": [
+    100030,
+    100038,
+    100039,
+    100042
+   ],
+   "successes": 0,
+   "n": 4,
+   "outcomes": {
+    "timeout": 4
+   },
+   "cost_usd_so_far": 0.9672,
+   "wall_s": 4.2
+  },
+  {
+   "k": 4,
+   "version": 10,
+   "turn": 34,
+   "seeds": [
+    100068,
+    100069
+   ],
+   "successes": 0,
+   "n": 2,
+   "outcomes": {
+    "dropped": 1,
+    "timeout": 1
+   },
+   "cost_usd_so_far": 1.6315,
+   "wall_s": 2.6
+  }
+ ],
+ "tool_counts": {
+  "run_python": 29,
+  "write_controller": 3,
+  "run_trials": 4,
+  "inspect_episode": 1,
+  "view_frames": 2,
+  "edit_controller": 11,
+  "submit": 1
+ },
+ "wall_s": 1054.9,
+ "final_controller": "controller.py"
+}

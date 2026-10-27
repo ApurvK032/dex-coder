@@ -1,0 +1,82 @@
+{
+ "run_id": "sort_opus_2",
+ "points": [
+  {
+   "trial": 1,
+   "turn": 9,
+   "version": 3,
+   "cost_usd_so_far": 0.3563,
+   "practice": [
+    7,
+    10
+   ],
+   "test_nominal": 0.43333333333333335
+  },
+  {
+   "trial": 2,
+   "turn": 14,
+   "version": 6,
+   "cost_usd_so_far": 0.505,
+   "practice": [
+    38,
+    40
+   ],
+   "test_nominal": 0.9333333333333333
+  },
+  {
+   "trial": 4,
+   "turn": 23,
+   "version": 9,
+   "cost_usd_so_far": 0.9087,
+   "practice": [
+    1,
+    1
+   ],
+   "test_nominal": 0.9333333333333333
+  },
+  {
+   "trial": 5,
+   "turn": 28,
+   "version": 12,
+   "cost_usd_so_far": 1.1563,
+   "practice": [
+    37,
+    40
+   ],
+   "test_nominal": 0.9
+  },
+  {
+   "trial": 6,
+   "turn": 31,
+   "version": 16,
+   "cost_usd_so_far": 1.333,
+   "practice": [
+    38,
+    40
+   ],
+   "test_nominal": 0.9666666666666667
+  },
+  {
+   "trial": 7,
+   "turn": 32,
+   "version": 18,
+   "cost_usd_so_far": 1.3954,
+   "practice": [
+    6,
+    8
+   ],
+   "test_nominal": 1.0
+  },
+  {
+   "trial": 8,
+   "turn": 36,
+   "version": 24,
+   "cost_usd_so_far": 1.5955,
+   "practice": [
+    37,
+    40
+   ],
+   "test_nominal": 0.9
+  }
+ ]
+}

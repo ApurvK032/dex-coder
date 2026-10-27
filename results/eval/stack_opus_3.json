@@ -1,0 +1,81 @@
+{
+ "controller": "/home/apurv/claude-code/dex-coder/outputs/runs/stack_opus_3/controller.py",
+ "kind": "stack",
+ "mode": "state",
+ "seeds": [
+  300000,
+  300099,
+  100
+ ],
+ "variants": {
+  "nominal": {
+   "successes": 99,
+   "n": 100,
+   "rate": 0.99,
+   "ci95": [
+    0.946,
+    0.998
+   ],
+   "outcomes": {
+    "success": 99,
+    "timeout": 1
+   },
+   "wall_s": 52.3
+  },
+  "heavy_slippery": {
+   "successes": 97,
+   "n": 100,
+   "rate": 0.97,
+   "ci95": [
+    0.915,
+    0.99
+   ],
+   "outcomes": {
+    "success": 97,
+    "timeout": 2,
+    "dropped": 1
+   },
+   "wall_s": 65.6
+  },
+  "weak_motors": {
+   "successes": 99,
+   "n": 100,
+   "rate": 0.99,
+   "ci95": [
+    0.946,
+    0.998
+   ],
+   "outcomes": {
+    "success": 99,
+    "timeout": 1
+   },
+   "wall_s": 58.0
+  },
+  "noisy_sensing": {
+   "successes": 93,
+   "n": 100,
+   "rate": 0.93,
+   "ci95": [
+    0.863,
+    0.966
+   ],
+   "outcomes": {
+    "success": 93,
+    "timeout": 5,
+    "dropped": 2
+   },
+   "wall_s": 60.3
+  }
+ },
+ "code_flags": [],
+ "run_id": "stack_opus_3",
+ "provenance": {
+  "time": "2026-10-27T18:02:23-0500",
+  "git_commit": "30ec2d8eb8d853963a96f0a3e2047ed6e28828cb",
+  "git_dirty": false,
+  "humanoid_vla_commit": "f5df5026fba3287ea3a455c3c73d9ef503bb9483",
+  "mujoco": "3.14.0",
+  "python": "3.12.3",
+  "host": "godzilla"
+ }
+}

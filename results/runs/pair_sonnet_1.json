@@ -1,0 +1,388 @@
+{
+ "config": {
+  "run_id": "pair_sonnet_1",
+  "kind": "pair",
+  "model": "claude-sonnet-5-5",
+  "max_turns": 40,
+  "max_usd": 4.0,
+  "effort": "high",
+  "max_wall_s": 10800,
+  "workers": 4
+ },
+ "end_reason": "turn limit",
+ "submitted": false,
+ "notes": null,
+ "turns": 40,
+ "cost_usd": 1.4267,
+ "usage": {
+  "input_tokens": 160,
+  "output_tokens": 58767,
+  "cache_creation_input_tokens": 132005,
+  "cache_read_input_tokens": 2543589
+ },
+ "versions": 32,
+ "trials": [
+  {
+   "k": 1,
+   "version": 1,
+   "turn": 3,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005
+   ],
+   "successes": 0,
+   "n": 6,
+   "outcomes": {
+    "timeout": 5,
+    "dropped": 1
+   },
+   "cost_usd_so_far": 0.0715,
+   "wall_s": 8.5
+  },
+  {
+   "k": 2,
+   "version": 1,
+   "turn": 9,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007
+   ],
+   "successes": 1,
+   "n": 8,
+   "outcomes": {
+    "timeout": 6,
+    "dropped": 1,
+    "success": 1
+   },
+   "cost_usd_so_far": 0.2261,
+   "wall_s": 10.3
+  },
+  {
+   "k": 3,
+   "version": 4,
+   "turn": 10,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007
+   ],
+   "successes": 0,
+   "n": 8,
+   "outcomes": {
+    "timeout": 7,
+    "dropped": 1
+   },
+   "cost_usd_so_far": 0.2466,
+   "wall_s": 10.3
+  },
+  {
+   "k": 4,
+   "version": 5,
+   "turn": 15,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009
+   ],
+   "successes": 0,
+   "n": 10,
+   "outcomes": {
+    "timeout": 9,
+    "dropped": 1
+   },
+   "cost_usd_so_far": 0.4111,
+   "wall_s": 12.7
+  },
+  {
+   "k": 5,
+   "version": 7,
+   "turn": 17,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009
+   ],
+   "successes": 1,
+   "n": 10,
+   "outcomes": {
+    "timeout": 9,
+    "success": 1
+   },
+   "cost_usd_so_far": 0.4816,
+   "wall_s": 13.5
+  },
+  {
+   "k": 6,
+   "version": 8,
+   "turn": 19,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009
+   ],
+   "successes": 0,
+   "n": 10,
+   "outcomes": {
+    "timeout": 10
+   },
+   "cost_usd_so_far": 0.5474,
+   "wall_s": 14.9
+  },
+  {
+   "k": 7,
+   "version": 10,
+   "turn": 29,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009
+   ],
+   "successes": 0,
+   "n": 10,
+   "outcomes": {
+    "timeout": 10
+   },
+   "cost_usd_so_far": 0.9065,
+   "wall_s": 13.0
+  },
+  {
+   "k": 8,
+   "version": 13,
+   "turn": 30,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009
+   ],
+   "successes": 1,
+   "n": 10,
+   "outcomes": {
+    "timeout": 9,
+    "success": 1
+   },
+   "cost_usd_so_far": 0.962,
+   "wall_s": 13.9
+  },
+  {
+   "k": 9,
+   "version": 16,
+   "turn": 32,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009
+   ],
+   "successes": 0,
+   "n": 10,
+   "outcomes": {
+    "timeout": 10
+   },
+   "cost_usd_so_far": 1.046,
+   "wall_s": 11.9
+  },
+  {
+   "k": 10,
+   "version": 18,
+   "turn": 33,
+   "seeds": [
+    100004,
+    100000,
+    100006,
+    100005,
+    100002
+   ],
+   "successes": 1,
+   "n": 5,
+   "outcomes": {
+    "timeout": 4,
+    "success": 1
+   },
+   "cost_usd_so_far": 1.095,
+   "wall_s": 6.2
+  },
+  {
+   "k": 11,
+   "version": 20,
+   "turn": 35,
+   "seeds": [
+    100004,
+    100000,
+    100002,
+    100007,
+    100008,
+    100001
+   ],
+   "successes": 0,
+   "n": 6,
+   "outcomes": {
+    "timeout": 6
+   },
+   "cost_usd_so_far": 1.1905,
+   "wall_s": 9.9
+  },
+  {
+   "k": 12,
+   "version": 24,
+   "turn": 37,
+   "seeds": [
+    100004,
+    100000,
+    100002,
+    100007,
+    100008,
+    100001,
+    100005,
+    100009
+   ],
+   "successes": 0,
+   "n": 8,
+   "outcomes": {
+    "timeout": 8
+   },
+   "cost_usd_so_far": 1.2824,
+   "wall_s": 9.6
+  },
+  {
+   "k": 13,
+   "version": 26,
+   "turn": 38,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011
+   ],
+   "successes": 1,
+   "n": 12,
+   "outcomes": {
+    "timeout": 10,
+    "success": 1,
+    "dropped": 1
+   },
+   "cost_usd_so_far": 1.3336,
+   "wall_s": 13.5
+  },
+  {
+   "k": 14,
+   "version": 29,
+   "turn": 39,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011
+   ],
+   "successes": 0,
+   "n": 12,
+   "outcomes": {
+    "timeout": 11,
+    "dropped": 1
+   },
+   "cost_usd_so_far": 1.383,
+   "wall_s": 12.9
+  },
+  {
+   "k": 15,
+   "version": 32,
+   "turn": 40,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005
+   ],
+   "successes": 0,
+   "n": 6,
+   "outcomes": {
+    "timeout": 6
+   },
+   "cost_usd_so_far": 1.4267,
+   "wall_s": 8.1
+  }
+ ],
+ "tool_counts": {
+  "run_python": 18,
+  "write_controller": 2,
+  "run_trials": 15,
+  "inspect_episode": 8,
+  "view_frames": 2,
+  "edit_controller": 30
+ },
+ "wall_s": 638.9,
+ "final_controller": "controller.py"
+}

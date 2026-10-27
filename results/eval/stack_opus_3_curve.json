@@ -1,0 +1,82 @@
+{
+ "run_id": "stack_opus_3",
+ "points": [
+  {
+   "trial": 1,
+   "turn": 4,
+   "version": 1,
+   "cost_usd_so_far": 0.1573,
+   "practice": [
+    1,
+    5
+   ],
+   "test_nominal": 0.1
+  },
+  {
+   "trial": 2,
+   "turn": 9,
+   "version": 2,
+   "cost_usd_so_far": 0.3974,
+   "practice": [
+    5,
+    10
+   ],
+   "test_nominal": 0.26666666666666666
+  },
+  {
+   "trial": 3,
+   "turn": 17,
+   "version": 5,
+   "cost_usd_so_far": 0.7648,
+   "practice": [
+    10,
+    15
+   ],
+   "test_nominal": 0.5333333333333333
+  },
+  {
+   "trial": 4,
+   "turn": 24,
+   "version": 6,
+   "cost_usd_so_far": 1.179,
+   "practice": [
+    15,
+    20
+   ],
+   "test_nominal": 0.5666666666666667
+  },
+  {
+   "trial": 5,
+   "turn": 28,
+   "version": 13,
+   "cost_usd_so_far": 1.3777,
+   "practice": [
+    22,
+    30
+   ],
+   "test_nominal": 0.6
+  },
+  {
+   "trial": 7,
+   "turn": 32,
+   "version": 22,
+   "cost_usd_so_far": 1.599,
+   "practice": [
+    39,
+    40
+   ],
+   "test_nominal": 0.9666666666666667
+  },
+  {
+   "trial": 8,
+   "turn": 39,
+   "version": 26,
+   "cost_usd_so_far": 1.895,
+   "practice": [
+    30,
+    30
+   ],
+   "test_nominal": 1.0
+  }
+ ]
+}

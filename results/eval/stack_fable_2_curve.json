@@ -1,0 +1,60 @@
+{
+ "run_id": "stack_fable_2",
+ "points": [
+  {
+   "trial": 1,
+   "turn": 7,
+   "version": 1,
+   "cost_usd_so_far": 0.672,
+   "practice": [
+    1,
+    5
+   ],
+   "test_nominal": 0.06666666666666667
+  },
+  {
+   "trial": 2,
+   "turn": 14,
+   "version": 2,
+   "cost_usd_so_far": 1.5101,
+   "practice": [
+    7,
+    10
+   ],
+   "test_nominal": 0.4
+  },
+  {
+   "trial": 3,
+   "turn": 21,
+   "version": 3,
+   "cost_usd_so_far": 2.4048,
+   "practice": [
+    16,
+    20
+   ],
+   "test_nominal": 0.7
+  },
+  {
+   "trial": 4,
+   "turn": 27,
+   "version": 6,
+   "cost_usd_so_far": 2.7389,
+   "practice": [
+    14,
+    20
+   ],
+   "test_nominal": 0.7666666666666667
+  },
+  {
+   "trial": 5,
+   "turn": 34,
+   "version": 11,
+   "cost_usd_so_far": 3.1699,
+   "practice": [
+    17,
+    20
+   ],
+   "test_nominal": 0.7
+  }
+ ]
+}

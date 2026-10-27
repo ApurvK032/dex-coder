@@ -1,0 +1,115 @@
+{
+ "run_id": "pair_opus_3",
+ "points": [
+  {
+   "trial": 1,
+   "turn": 7,
+   "version": 1,
+   "cost_usd_so_far": 0.3292,
+   "practice": [
+    0,
+    10
+   ],
+   "test_nominal": 0.03333333333333333
+  },
+  {
+   "trial": 2,
+   "turn": 8,
+   "version": 3,
+   "cost_usd_so_far": 0.3871,
+   "practice": [
+    0,
+    2
+   ],
+   "test_nominal": 0.03333333333333333
+  },
+  {
+   "trial": 3,
+   "turn": 13,
+   "version": 4,
+   "cost_usd_so_far": 0.6945,
+   "practice": [
+    1,
+    10
+   ],
+   "test_nominal": 0.03333333333333333
+  },
+  {
+   "trial": 4,
+   "turn": 25,
+   "version": 7,
+   "cost_usd_so_far": 1.5775,
+   "practice": [
+    0,
+    10
+   ],
+   "test_nominal": 0.3
+  },
+  {
+   "trial": 5,
+   "turn": 32,
+   "version": 15,
+   "cost_usd_so_far": 2.1089,
+   "practice": [
+    1,
+    12
+   ],
+   "test_nominal": 0.03333333333333333
+  },
+  {
+   "trial": 6,
+   "turn": 35,
+   "version": 17,
+   "cost_usd_so_far": 2.2936,
+   "practice": [
+    5,
+    16
+   ],
+   "test_nominal": 0.16666666666666666
+  },
+  {
+   "trial": 7,
+   "turn": 36,
+   "version": 19,
+   "cost_usd_so_far": 2.4171,
+   "practice": [
+    10,
+    16
+   ],
+   "test_nominal": 0.4666666666666667
+  },
+  {
+   "trial": 8,
+   "turn": 37,
+   "version": 21,
+   "cost_usd_so_far": 2.5283,
+   "practice": [
+    7,
+    20
+   ],
+   "test_nominal": 0.4
+  },
+  {
+   "trial": 9,
+   "turn": 38,
+   "version": 25,
+   "cost_usd_so_far": 2.6583,
+   "practice": [
+    2,
+    12
+   ],
+   "test_nominal": 0.4
+  },
+  {
+   "trial": 10,
+   "turn": 39,
+   "version": 26,
+   "cost_usd_so_far": 2.7503,
+   "practice": [
+    0,
+    10
+   ],
+   "test_nominal": 0.13333333333333333
+  }
+ ]
+}

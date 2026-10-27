@@ -1,0 +1,433 @@
+{
+ "config": {
+  "run_id": "pair_sonnet_3",
+  "kind": "pair",
+  "model": "claude-sonnet-5-5",
+  "max_turns": 40,
+  "max_usd": 4.0,
+  "effort": "high",
+  "max_wall_s": 10800,
+  "workers": 4
+ },
+ "end_reason": "submitted",
+ "submitted": true,
+ "notes": "The controller is unreliable and will score poorly. In the last practice run it passed 2 of 12 episodes, and earlier versions passed 0 to 2 out of 10 on each run. The last run (12 seeds) put the first cube in the correct bin on roughly 10 of 12 episodes, but the second cube usually failed.\n\nHow it works:\n- Inverse kinematics: damped least-squares IK on the grasp site toward a Cartesian target with the palm facing down, warm-started from arm_target. It uses a null-space pull toward the home pose and a cap on shoulder roll to avoid torso collisions. Joint steps are limited to 0.07 rad.\n- Per cube, a state machine runs: above the cube, descend, close, lift, carry, lower into the bin, slide against the wall, release, retreat.\n- The hand yaw for grasping is chosen from cube yaw plus multiples of 90\u00b0, by whichever IK solution has the smallest position error.\n- The carry, lower and slide steps servo on the observed cube position, not the hand position.\n\nPlacement:\n- The first cube is pushed into the near, -y/-x corner of the bin. The second cube's spot is searched on a grid for the largest distance from the first cube's observed position.\n\nKnown weaknesses:\n- The two 5 cm cubes in an 11 cm bin leave only about 5 mm of slack. The first cube often ends up 1\u20132 cm from the wall instead of against it, so the second cube lands on top of it or rests on a wall rim. The result is a cube centre above the rim and a timeout.\n- Cubes near y\u2248-0.32 or near the reach limits sometimes slip out of the hand or fail to lift (seeds 100004, 100013, 100021).\n- I did not tune any of this for different physics or sensing noise.",
+ "turns": 40,
+ "cost_usd": 1.5436,
+ "usage": {
+  "input_tokens": 160,
+  "output_tokens": 65428,
+  "cache_creation_input_tokens": 151715,
+  "cache_read_input_tokens": 2548455
+ },
+ "versions": 37,
+ "trials": [
+  {
+   "k": 1,
+   "version": 1,
+   "turn": 4,
+   "seeds": [
+    100000
+   ],
+   "successes": 0,
+   "n": 1,
+   "outcomes": {
+    "timeout": 1
+   },
+   "cost_usd_so_far": 0.1057,
+   "wall_s": 3.7
+  },
+  {
+   "k": 2,
+   "version": 11,
+   "turn": 15,
+   "seeds": [
+    100000,
+    100001,
+    100002
+   ],
+   "successes": 1,
+   "n": 3,
+   "outcomes": {
+    "timeout": 2,
+    "success": 1
+   },
+   "cost_usd_so_far": 0.3492,
+   "wall_s": 4.7
+  },
+  {
+   "k": 3,
+   "version": 12,
+   "turn": 16,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003
+   ],
+   "successes": 0,
+   "n": 4,
+   "outcomes": {
+    "timeout": 4
+   },
+   "cost_usd_so_far": 0.3732,
+   "wall_s": 6.7
+  },
+  {
+   "k": 4,
+   "version": 12,
+   "turn": 19,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005
+   ],
+   "successes": 1,
+   "n": 6,
+   "outcomes": {
+    "timeout": 5,
+    "success": 1
+   },
+   "cost_usd_so_far": 0.514,
+   "wall_s": 8.6
+  },
+  {
+   "k": 5,
+   "version": 13,
+   "turn": 20,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005
+   ],
+   "successes": 0,
+   "n": 6,
+   "outcomes": {
+    "timeout": 6
+   },
+   "cost_usd_so_far": 0.5827,
+   "wall_s": 8.7
+  },
+  {
+   "k": 6,
+   "version": 15,
+   "turn": 21,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005
+   ],
+   "successes": 0,
+   "n": 6,
+   "outcomes": {
+    "timeout": 6
+   },
+   "cost_usd_so_far": 0.6271,
+   "wall_s": 8.6
+  },
+  {
+   "k": 7,
+   "version": 18,
+   "turn": 23,
+   "seeds": [
+    100004,
+    100000,
+    100003
+   ],
+   "successes": 0,
+   "n": 3,
+   "outcomes": {
+    "timeout": 3
+   },
+   "cost_usd_so_far": 0.7084,
+   "wall_s": 4.6
+  },
+  {
+   "k": 8,
+   "version": 20,
+   "turn": 24,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007
+   ],
+   "successes": 0,
+   "n": 8,
+   "outcomes": {
+    "timeout": 8
+   },
+   "cost_usd_so_far": 0.7386,
+   "wall_s": 13.1
+  },
+  {
+   "k": 9,
+   "version": 21,
+   "turn": 25,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007
+   ],
+   "successes": 1,
+   "n": 8,
+   "outcomes": {
+    "timeout": 7,
+    "success": 1
+   },
+   "cost_usd_so_far": 0.8003,
+   "wall_s": 11.0
+  },
+  {
+   "k": 10,
+   "version": 25,
+   "turn": 29,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007
+   ],
+   "successes": 0,
+   "n": 8,
+   "outcomes": {
+    "timeout": 8
+   },
+   "cost_usd_so_far": 0.9941,
+   "wall_s": 11.0
+  },
+  {
+   "k": 11,
+   "version": 27,
+   "turn": 30,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007
+   ],
+   "successes": 1,
+   "n": 8,
+   "outcomes": {
+    "timeout": 7,
+    "success": 1
+   },
+   "cost_usd_so_far": 1.049,
+   "wall_s": 10.5
+  },
+  {
+   "k": 12,
+   "version": 28,
+   "turn": 31,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009
+   ],
+   "successes": 1,
+   "n": 10,
+   "outcomes": {
+    "timeout": 9,
+    "success": 1
+   },
+   "cost_usd_so_far": 1.0939,
+   "wall_s": 13.8
+  },
+  {
+   "k": 13,
+   "version": 29,
+   "turn": 34,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009
+   ],
+   "successes": 1,
+   "n": 10,
+   "outcomes": {
+    "timeout": 9,
+    "success": 1
+   },
+   "cost_usd_so_far": 1.2231,
+   "wall_s": 13.8
+  },
+  {
+   "k": 14,
+   "version": 31,
+   "turn": 35,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009
+   ],
+   "successes": 1,
+   "n": 10,
+   "outcomes": {
+    "timeout": 9,
+    "success": 1
+   },
+   "cost_usd_so_far": 1.2763,
+   "wall_s": 13.5
+  },
+  {
+   "k": 15,
+   "version": 34,
+   "turn": 36,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009
+   ],
+   "successes": 2,
+   "n": 10,
+   "outcomes": {
+    "timeout": 8,
+    "success": 2
+   },
+   "cost_usd_so_far": 1.3359,
+   "wall_s": 13.4
+  },
+  {
+   "k": 16,
+   "version": 35,
+   "turn": 37,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009
+   ],
+   "successes": 0,
+   "n": 10,
+   "outcomes": {
+    "timeout": 10
+   },
+   "cost_usd_so_far": 1.3926,
+   "wall_s": 16.9
+  },
+  {
+   "k": 17,
+   "version": 36,
+   "turn": 38,
+   "seeds": [
+    100010,
+    100011,
+    100012,
+    100013,
+    100014,
+    100015,
+    100016,
+    100017,
+    100018,
+    100019,
+    100020,
+    100021
+   ],
+   "successes": 0,
+   "n": 12,
+   "outcomes": {
+    "timeout": 12
+   },
+   "cost_usd_so_far": 1.437,
+   "wall_s": 14.8
+  },
+  {
+   "k": 18,
+   "version": 37,
+   "turn": 39,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011
+   ],
+   "successes": 2,
+   "n": 12,
+   "outcomes": {
+    "timeout": 10,
+    "success": 2
+   },
+   "cost_usd_so_far": 1.4929,
+   "wall_s": 14.8
+  }
+ ],
+ "tool_counts": {
+  "run_python": 16,
+  "write_controller": 2,
+  "run_trials": 18,
+  "view_frames": 4,
+  "edit_controller": 35,
+  "inspect_episode": 2,
+  "submit": 1
+ },
+ "wall_s": 731.9,
+ "final_controller": "controller.py"
+}

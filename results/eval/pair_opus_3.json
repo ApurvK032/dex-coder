@@ -1,0 +1,81 @@
+{
+ "controller": "/home/apurv/claude-code/dex-coder/outputs/runs/pair_opus_3/controller.py",
+ "kind": "pair",
+ "mode": "state",
+ "seeds": [
+  300000,
+  300099,
+  100
+ ],
+ "variants": {
+  "nominal": {
+   "successes": 48,
+   "n": 100,
+   "rate": 0.48,
+   "ci95": [
+    0.385,
+    0.577
+   ],
+   "outcomes": {
+    "timeout": 51,
+    "success": 48,
+    "dropped": 1
+   },
+   "wall_s": 717.2
+  },
+  "heavy_slippery": {
+   "successes": 40,
+   "n": 100,
+   "rate": 0.4,
+   "ci95": [
+    0.309,
+    0.498
+   ],
+   "outcomes": {
+    "timeout": 60,
+    "success": 40
+   },
+   "wall_s": 695.4
+  },
+  "weak_motors": {
+   "successes": 54,
+   "n": 100,
+   "rate": 0.54,
+   "ci95": [
+    0.443,
+    0.634
+   ],
+   "outcomes": {
+    "success": 54,
+    "timeout": 46
+   },
+   "wall_s": 569.6
+  },
+  "noisy_sensing": {
+   "successes": 39,
+   "n": 100,
+   "rate": 0.39,
+   "ci95": [
+    0.3,
+    0.488
+   ],
+   "outcomes": {
+    "timeout": 45,
+    "success": 39,
+    "dropped": 16
+   },
+   "wall_s": 541.8
+  }
+ },
+ "code_flags": [],
+ "run_id": "pair_opus_3",
+ "provenance": {
+  "time": "2026-10-27T18:01:52-0500",
+  "git_commit": "30ec2d8eb8d853963a96f0a3e2047ed6e28828cb",
+  "git_dirty": false,
+  "humanoid_vla_commit": "f5df5026fba3287ea3a455c3c73d9ef503bb9483",
+  "mujoco": "3.14.0",
+  "python": "3.12.3",
+  "host": "godzilla"
+ }
+}

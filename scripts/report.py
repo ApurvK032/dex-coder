@@ -3,9 +3,9 @@
     .venv/bin/python scripts/report.py [--results results] [--ledger outputs/ledger.jsonl]
 
 Two studies. Study 1 (controllers read exact cube poses): 27 runs, three per task and model.
-Three runs per model are too few to rank models (D-010), so this report gives no per-model
+Three runs per model are too few to rank models (D-6), so this report gives no per-model
 averages: it reports what holds across all controllers, and lists every run as raw data.
-Study 2 (camera-only, D-009): Opus 5.5 runs on the sort task.
+Study 2 (camera-only, D-7): Opus 5.5 runs on the sort task.
 
 Statistics: paired changes across controllers use an exact or Monte Carlo sign-flip test; a
 controller against a reference on the same 100 layouts uses Fisher's exact test. Colors: the
@@ -335,7 +335,7 @@ def tables(runs: dict, refs: dict, ledger: Path | None) -> str:
         lines += ["## Study 2: cameras only", "",
                   f"{len(s2)} runs of Opus 5.5 on the sort task (${sum(r['summary']['cost_usd'] for r in s2.values()):.2f}). "
                   "Controllers get head and wrist camera images (colour and depth), joint angles and the instruction; no "
-                  "cube poses (D-009).", ""]
+                  "cube poses (D-7).", ""]
         lines += ["| Condition | Lowest run | Highest run | Mean of runs | Reference |", "|---|---|---|---|---|"]
         for v in VARIANTS2:
             xs = [rate(r, v) for r in s2.values()]

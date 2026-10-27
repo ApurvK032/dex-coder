@@ -1,0 +1,126 @@
+{
+ "config": {
+  "run_id": "pair_fable_2",
+  "kind": "pair",
+  "model": "claude-fable-5-1",
+  "max_turns": 40,
+  "max_usd": 12.0,
+  "effort": "high",
+  "max_wall_s": 10800,
+  "workers": 4
+ },
+ "end_reason": "turn limit",
+ "submitted": false,
+ "notes": null,
+ "turns": 40,
+ "cost_usd": 4.558,
+ "usage": {
+  "input_tokens": 160,
+  "output_tokens": 53606,
+  "cache_creation_input_tokens": 103776,
+  "cache_read_input_tokens": 2315469
+ },
+ "versions": 18,
+ "trials": [
+  {
+   "k": 1,
+   "version": 1,
+   "turn": 7,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004
+   ],
+   "successes": 0,
+   "n": 5,
+   "outcomes": {
+    "timeout": 4,
+    "dropped": 1
+   },
+   "cost_usd_so_far": 1.4046,
+   "wall_s": 7.6
+  },
+  {
+   "k": 2,
+   "version": 8,
+   "turn": 24,
+   "seeds": [
+    100006,
+    100012
+   ],
+   "successes": 1,
+   "n": 2,
+   "outcomes": {
+    "timeout": 1,
+    "success": 1
+   },
+   "cost_usd_so_far": 2.9121,
+   "wall_s": 3.1
+  },
+  {
+   "k": 3,
+   "version": 9,
+   "turn": 29,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009
+   ],
+   "successes": 1,
+   "n": 10,
+   "outcomes": {
+    "timeout": 9,
+    "success": 1
+   },
+   "cost_usd_so_far": 3.7613,
+   "wall_s": 13.4
+  },
+  {
+   "k": 4,
+   "version": 16,
+   "turn": 38,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011
+   ],
+   "successes": 1,
+   "n": 12,
+   "outcomes": {
+    "timeout": 10,
+    "dropped": 1,
+    "success": 1
+   },
+   "cost_usd_so_far": 4.3661,
+   "wall_s": 16.3
+  }
+ ],
+ "tool_counts": {
+  "run_python": 14,
+  "write_controller": 2,
+  "run_trials": 4,
+  "inspect_episode": 2,
+  "view_frames": 2,
+  "edit_controller": 16
+ },
+ "wall_s": 1038.8,
+ "final_controller": "controller.py"
+}

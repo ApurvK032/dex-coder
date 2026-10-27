@@ -1,0 +1,82 @@
+{
+ "run_id": "sort_sonnet_3",
+ "points": [
+  {
+   "trial": 1,
+   "turn": 3,
+   "version": 1,
+   "cost_usd_so_far": 0.0585,
+   "practice": [
+    1,
+    3
+   ],
+   "test_nominal": 0.06666666666666667
+  },
+  {
+   "trial": 3,
+   "turn": 11,
+   "version": 2,
+   "cost_usd_so_far": 0.2897,
+   "practice": [
+    7,
+    12
+   ],
+   "test_nominal": 0.5
+  },
+  {
+   "trial": 4,
+   "turn": 12,
+   "version": 7,
+   "cost_usd_so_far": 0.3415,
+   "practice": [
+    15,
+    20
+   ],
+   "test_nominal": 0.7
+  },
+  {
+   "trial": 5,
+   "turn": 18,
+   "version": 8,
+   "cost_usd_so_far": 0.5435,
+   "practice": [
+    18,
+    20
+   ],
+   "test_nominal": 0.7666666666666667
+  },
+  {
+   "trial": 6,
+   "turn": 20,
+   "version": 10,
+   "cost_usd_so_far": 0.6106,
+   "practice": [
+    18,
+    20
+   ],
+   "test_nominal": 0.9
+  },
+  {
+   "trial": 8,
+   "turn": 32,
+   "version": 18,
+   "cost_usd_so_far": 0.9985,
+   "practice": [
+    40,
+    40
+   ],
+   "test_nominal": 0.9
+  },
+  {
+   "trial": 9,
+   "turn": 40,
+   "version": 22,
+   "cost_usd_so_far": 1.2846,
+   "practice": [
+    11,
+    12
+   ],
+   "test_nominal": 0.9333333333333333
+  }
+ ]
+}

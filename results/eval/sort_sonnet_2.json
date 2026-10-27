@@ -1,0 +1,80 @@
+{
+ "controller": "/home/apurv/claude-code/dex-coder/outputs/runs/sort_sonnet_2/controller.py",
+ "kind": "sort",
+ "mode": "state",
+ "seeds": [
+  300000,
+  300099,
+  100
+ ],
+ "variants": {
+  "nominal": {
+   "successes": 91,
+   "n": 100,
+   "rate": 0.91,
+   "ci95": [
+    0.838,
+    0.952
+   ],
+   "outcomes": {
+    "success": 91,
+    "timeout": 9
+   },
+   "wall_s": 34.2
+  },
+  "heavy_slippery": {
+   "successes": 84,
+   "n": 100,
+   "rate": 0.84,
+   "ci95": [
+    0.756,
+    0.899
+   ],
+   "outcomes": {
+    "success": 84,
+    "timeout": 15,
+    "dropped": 1
+   },
+   "wall_s": 41.6
+  },
+  "weak_motors": {
+   "successes": 92,
+   "n": 100,
+   "rate": 0.92,
+   "ci95": [
+    0.85,
+    0.959
+   ],
+   "outcomes": {
+    "success": 92,
+    "timeout": 8
+   },
+   "wall_s": 33.3
+  },
+  "noisy_sensing": {
+   "successes": 87,
+   "n": 100,
+   "rate": 0.87,
+   "ci95": [
+    0.79,
+    0.922
+   ],
+   "outcomes": {
+    "success": 87,
+    "timeout": 13
+   },
+   "wall_s": 36.4
+  }
+ },
+ "code_flags": [],
+ "run_id": "sort_sonnet_2",
+ "provenance": {
+  "time": "2026-10-27T18:30:29-0500",
+  "git_commit": "30ec2d8eb8d853963a96f0a3e2047ed6e28828cb",
+  "git_dirty": false,
+  "humanoid_vla_commit": "f5df5026fba3287ea3a455c3c73d9ef503bb9483",
+  "mujoco": "3.14.0",
+  "python": "3.12.3",
+  "host": "godzilla"
+ }
+}

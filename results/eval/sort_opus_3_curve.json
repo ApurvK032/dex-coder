@@ -1,0 +1,82 @@
+{
+ "run_id": "sort_opus_3",
+ "points": [
+  {
+   "trial": 2,
+   "turn": 11,
+   "version": 1,
+   "cost_usd_so_far": 0.4132,
+   "practice": [
+    26,
+    30
+   ],
+   "test_nominal": 0.8
+  },
+  {
+   "trial": 3,
+   "turn": 12,
+   "version": 2,
+   "cost_usd_so_far": 0.5053,
+   "practice": [
+    29,
+    30
+   ],
+   "test_nominal": 0.9333333333333333
+  },
+  {
+   "trial": 4,
+   "turn": 16,
+   "version": 3,
+   "cost_usd_so_far": 0.7759,
+   "practice": [
+    40,
+    40
+   ],
+   "test_nominal": 0.9666666666666667
+  },
+  {
+   "trial": 6,
+   "turn": 32,
+   "version": 14,
+   "cost_usd_so_far": 1.6434,
+   "practice": [
+    1,
+    2
+   ],
+   "test_nominal": 1.0
+  },
+  {
+   "trial": 7,
+   "turn": 35,
+   "version": 18,
+   "cost_usd_so_far": 1.7779,
+   "practice": [
+    5,
+    6
+   ],
+   "test_nominal": 1.0
+  },
+  {
+   "trial": 8,
+   "turn": 37,
+   "version": 23,
+   "cost_usd_so_far": 1.9179,
+   "practice": [
+    38,
+    40
+   ],
+   "test_nominal": 0.8333333333333334
+  },
+  {
+   "trial": 9,
+   "turn": 38,
+   "version": 24,
+   "cost_usd_so_far": 1.9695,
+   "practice": [
+    39,
+    40
+   ],
+   "test_nominal": 1.0
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "controller": "/home/apurv/claude-code/dex-coder/outputs/runs/sort_fable_2/controller.py",
+ "kind": "sort",
+ "mode": "state",
+ "seeds": [
+  300000,
+  300099,
+  100
+ ],
+ "variants": {
+  "nominal": {
+   "successes": 80,
+   "n": 100,
+   "rate": 0.8,
+   "ci95": [
+    0.711,
+    0.867
+   ],
+   "outcomes": {
+    "success": 80,
+    "timeout": 12,
+    "dropped": 8
+   },
+   "wall_s": 82.1
+  },
+  "heavy_slippery": {
+   "successes": 81,
+   "n": 100,
+   "rate": 0.81,
+   "ci95": [
+    0.722,
+    0.875
+   ],
+   "outcomes": {
+    "success": 81,
+    "dropped": 10,
+    "timeout": 9
+   },
+   "wall_s": 76.0
+  },
+  "weak_motors": {
+   "successes": 79,
+   "n": 100,
+   "rate": 0.79,
+   "ci95": [
+    0.7,
+    0.858
+   ],
+   "outcomes": {
+    "success": 79,
+    "timeout": 15,
+    "dropped": 5,
+    "wrong_object": 1
+   },
+   "wall_s": 74.5
+  },
+  "noisy_sensing": {
+   "successes": 78,
+   "n": 100,
+   "rate": 0.78,
+   "ci95": [
+    0.689,
+    0.85
+   ],
+   "outcomes": {
+    "success": 78,
+    "dropped": 14,
+    "timeout": 8
+   },
+   "wall_s": 71.3
+  }
+ },
+ "code_flags": [],
+ "run_id": "sort_fable_2",
+ "provenance": {
+  "time": "2026-10-27T18:17:39-0500",
+  "git_commit": "30ec2d8eb8d853963a96f0a3e2047ed6e28828cb",
+  "git_dirty": false,
+  "humanoid_vla_commit": "f5df5026fba3287ea3a455c3c73d9ef503bb9483",
+  "mujoco": "3.14.0",
+  "python": "3.12.3",
+  "host": "godzilla"
+ }
+}

@@ -1,0 +1,137 @@
+{
+ "run_id": "pair_opus_1",
+ "points": [
+  {
+   "trial": 2,
+   "turn": 12,
+   "version": 2,
+   "cost_usd_so_far": 0.6499,
+   "practice": [
+    0,
+    6
+   ],
+   "test_nominal": 0.0
+  },
+  {
+   "trial": 3,
+   "turn": 13,
+   "version": 3,
+   "cost_usd_so_far": 0.7746,
+   "practice": [
+    1,
+    6
+   ],
+   "test_nominal": 0.1
+  },
+  {
+   "trial": 4,
+   "turn": 15,
+   "version": 6,
+   "cost_usd_so_far": 0.8615,
+   "practice": [
+    3,
+    12
+   ],
+   "test_nominal": 0.16666666666666666
+  },
+  {
+   "trial": 5,
+   "turn": 21,
+   "version": 7,
+   "cost_usd_so_far": 1.4051,
+   "practice": [
+    5,
+    12
+   ],
+   "test_nominal": 0.4
+  },
+  {
+   "trial": 6,
+   "turn": 25,
+   "version": 8,
+   "cost_usd_so_far": 1.869,
+   "practice": [
+    5,
+    12
+   ],
+   "test_nominal": 0.26666666666666666
+  },
+  {
+   "trial": 7,
+   "turn": 27,
+   "version": 10,
+   "cost_usd_so_far": 2.0684,
+   "practice": [
+    7,
+    12
+   ],
+   "test_nominal": 0.43333333333333335
+  },
+  {
+   "trial": 9,
+   "turn": 30,
+   "version": 15,
+   "cost_usd_so_far": 2.3612,
+   "practice": [
+    7,
+    16
+   ],
+   "test_nominal": 0.3
+  },
+  {
+   "trial": 10,
+   "turn": 32,
+   "version": 19,
+   "cost_usd_so_far": 2.5236,
+   "practice": [
+    9,
+    16
+   ],
+   "test_nominal": 0.3333333333333333
+  },
+  {
+   "trial": 11,
+   "turn": 34,
+   "version": 23,
+   "cost_usd_so_far": 2.7734,
+   "practice": [
+    10,
+    16
+   ],
+   "test_nominal": 0.3333333333333333
+  },
+  {
+   "trial": 12,
+   "turn": 36,
+   "version": 24,
+   "cost_usd_so_far": 2.9814,
+   "practice": [
+    10,
+    16
+   ],
+   "test_nominal": 0.3333333333333333
+  },
+  {
+   "trial": 13,
+   "turn": 37,
+   "version": 25,
+   "cost_usd_so_far": 3.0901,
+   "practice": [
+    16,
+    16
+   ],
+   "test_nominal": 0.8333333333333334
+  },
+  {
+   "trial": 14,
+   "turn": 38,
+   "version": 26,
+   "cost_usd_so_far": 3.1831,
+   "practice": [
+    25,
+    30
+   ],
+   "test_nominal": 0.8333333333333334
+  }
+ ]
+}

@@ -1,0 +1,80 @@
+{
+ "controller": "/home/apurv/claude-code/dex-coder/outputs/runs/pair_sonnet_3/controller.py",
+ "kind": "pair",
+ "mode": "state",
+ "seeds": [
+  300000,
+  300099,
+  100
+ ],
+ "variants": {
+  "nominal": {
+   "successes": 9,
+   "n": 100,
+   "rate": 0.09,
+   "ci95": [
+    0.048,
+    0.162
+   ],
+   "outcomes": {
+    "timeout": 91,
+    "success": 9
+   },
+   "wall_s": 144.0
+  },
+  "heavy_slippery": {
+   "successes": 10,
+   "n": 100,
+   "rate": 0.1,
+   "ci95": [
+    0.055,
+    0.174
+   ],
+   "outcomes": {
+    "timeout": 90,
+    "success": 10
+   },
+   "wall_s": 144.8
+  },
+  "weak_motors": {
+   "successes": 4,
+   "n": 100,
+   "rate": 0.04,
+   "ci95": [
+    0.016,
+    0.098
+   ],
+   "outcomes": {
+    "timeout": 95,
+    "success": 4,
+    "dropped": 1
+   },
+   "wall_s": 139.5
+  },
+  "noisy_sensing": {
+   "successes": 10,
+   "n": 100,
+   "rate": 0.1,
+   "ci95": [
+    0.055,
+    0.174
+   ],
+   "outcomes": {
+    "timeout": 90,
+    "success": 10
+   },
+   "wall_s": 139.4
+  }
+ },
+ "code_flags": [],
+ "run_id": "pair_sonnet_3",
+ "provenance": {
+  "time": "2026-10-27T17:37:56-0500",
+  "git_commit": "30ec2d8eb8d853963a96f0a3e2047ed6e28828cb",
+  "git_dirty": false,
+  "humanoid_vla_commit": "f5df5026fba3287ea3a455c3c73d9ef503bb9483",
+  "mujoco": "3.14.0",
+  "python": "3.12.3",
+  "host": "godzilla"
+ }
+}

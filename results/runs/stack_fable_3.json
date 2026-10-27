@@ -1,0 +1,93 @@
+{
+ "config": {
+  "run_id": "stack_fable_3",
+  "kind": "stack",
+  "model": "claude-fable-5-1",
+  "max_turns": 40,
+  "max_usd": 12.0,
+  "effort": "high",
+  "max_wall_s": 10800,
+  "workers": 4
+ },
+ "end_reason": "submitted",
+ "submitted": true,
+ "notes": "Stacking controller: closed-loop Cartesian state machine with damped-least-squares IK on the private kinematic model (warm-started, null-space pull on shoulder roll to avoid torso self-collision), plus a slow integral \"sag\" correction of joint targets from the measured grasp-site error (handles weak motors). Grasp is top-down (palm down): hand yaw chosen to align a cube face, from candidates (cube yaw mod 90 \u00b190\u00b0) verified reachable and self-collision-free with IK + mj_forward contact check at the approach and grasp points. Site is placed 1.5 cm toward the fingers from the cube centre (thumb clearance against sensing bias) and 4 mm above centre; closure ramps 0\u21920.5 (fingers curl, push cube against thumb) then 0.5\u21921 (thumb squeezes), gentle lift, measure cube offset in site frame, carry to 4 cm above the destination cube, lower to a 6 mm gap, instant release, retreat, check; retries re-pick on failure (grasp failure or mis-stack). Tested: nominal 30/30, heavy_slippery 12/12, weak_motors 10/10, noisy_sensing ~75-80% (remaining failures: cube occasionally pops out or lands off-centre when position bias is large; retry loop sometimes runs out of time). Weaknesses: thumb tip touches the table slightly at grasp height; no explicit avoidance of neighbouring cubes with the open fingers; yaw changes while carrying could loosen slippery grasps.",
+ "turns": 39,
+ "cost_usd": 4.4864,
+ "usage": {
+  "input_tokens": 156,
+  "output_tokens": 54110,
+  "cache_creation_input_tokens": 99188,
+  "cache_read_input_tokens": 2157943
+ },
+ "versions": 12,
+ "trials": [
+  {
+   "k": 1,
+   "version": 1,
+   "turn": 13,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009
+   ],
+   "successes": 10,
+   "n": 10,
+   "outcomes": {
+    "success": 10
+   },
+   "cost_usd_so_far": 2.1215,
+   "wall_s": 3.2
+  },
+  {
+   "k": 2,
+   "version": 12,
+   "turn": 38,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011,
+    100012,
+    100013,
+    100014,
+    100015,
+    100016,
+    100017,
+    100018,
+    100019
+   ],
+   "successes": 20,
+   "n": 20,
+   "outcomes": {
+    "success": 20
+   },
+   "cost_usd_so_far": 4.3443,
+   "wall_s": 6.1
+  }
+ ],
+ "tool_counts": {
+  "run_python": 25,
+  "write_controller": 1,
+  "run_trials": 2,
+  "edit_controller": 11,
+  "submit": 1
+ },
+ "wall_s": 865.9,
+ "final_controller": "controller.py"
+}

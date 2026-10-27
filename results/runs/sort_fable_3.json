@@ -1,0 +1,175 @@
+{
+ "config": {
+  "run_id": "sort_fable_3",
+  "kind": "sort",
+  "model": "claude-fable-5-1",
+  "max_turns": 40,
+  "max_usd": 12.0,
+  "effort": "high",
+  "max_wall_s": 10800,
+  "workers": 4
+ },
+ "end_reason": "submitted",
+ "submitted": true,
+ "notes": "Controller: state machine (plan \u2192 pregrasp \u2192 descend \u2192 close \u2192 lift \u2192 transport \u2192 lower \u2192 release \u2192 retreat \u2192 done, with retries) driving the right arm via a damped-least-squares IK on the grasp site (position + palm-down orientation + yaw), using a private MjData of robot.model (mj_kinematics + mj_comPos for correct Jacobians). IK uses tightened shoulder limits (roll \u2264 0) and a self-collision penalty (mj_collision on the arm vs. torso) when selecting among seeds (current target, home, nearest samples from a random FK database). Cartesian targets are interpolated at limited speed and refined from the previous joint target for continuity. Grasp: top-down, hand yaw = cube yaw + 45\u00b0 + k\u00b790\u00b0 (diagonal pinch, self-centering between thumb and the two fingers), chosen closest to a y-dependent preferred yaw, collision-checked, and penalizing other cubes behind the hand; grasp site at cube center height, 8 mm back along the finger axis. Closure ramps to 1 over 0.5 s, lift to 17 cm, transport over the bin, lower to 9.5 cm above the table and ramp open over 0.5 s, retreat up. If the cube is not lifted or not in the bin, it re-plans and retries (until t=18 s). Tested 29/30 on practice seeds 100000-100029 before the last (small) edit adding the other-cube penalty. Known weaknesses: cube occasionally slips during transport/lower (grasp is a finger-edge pinch); retries near other cubes can nudge or sweep them with the wrist/forearm; no explicit avoidance of bin walls or other cubes in the trajectory; depends on reasonably accurate cube pose observations.",
+ "turns": 40,
+ "cost_usd": 4.5955,
+ "usage": {
+  "input_tokens": 160,
+  "output_tokens": 53661,
+  "cache_creation_input_tokens": 107124,
+  "cache_read_input_tokens": 2287162
+ },
+ "versions": 12,
+ "trials": [
+  {
+   "k": 1,
+   "version": 1,
+   "turn": 12,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004
+   ],
+   "successes": 3,
+   "n": 5,
+   "outcomes": {
+    "success": 3,
+    "dropped": 1,
+    "timeout": 1
+   },
+   "cost_usd_so_far": 1.793,
+   "wall_s": 5.0
+  },
+  {
+   "k": 2,
+   "version": 6,
+   "turn": 23,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011,
+    100012,
+    100013,
+    100014,
+    100015,
+    100016,
+    100017,
+    100018,
+    100019
+   ],
+   "successes": 15,
+   "n": 20,
+   "outcomes": {
+    "success": 15,
+    "timeout": 4,
+    "dropped": 1
+   },
+   "cost_usd_so_far": 2.5326,
+   "wall_s": 19.1
+  },
+  {
+   "k": 3,
+   "version": 7,
+   "turn": 29,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011,
+    100012,
+    100013,
+    100014,
+    100015,
+    100016,
+    100017,
+    100018,
+    100019
+   ],
+   "successes": 17,
+   "n": 20,
+   "outcomes": {
+    "success": 17,
+    "timeout": 2,
+    "dropped": 1
+   },
+   "cost_usd_so_far": 3.6994,
+   "wall_s": 10.3
+  },
+  {
+   "k": 4,
+   "version": 10,
+   "turn": 36,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011,
+    100012,
+    100013,
+    100014,
+    100015,
+    100016,
+    100017,
+    100018,
+    100019,
+    100020,
+    100021,
+    100022,
+    100023,
+    100024,
+    100025,
+    100026,
+    100027,
+    100028,
+    100029
+   ],
+   "successes": 29,
+   "n": 30,
+   "outcomes": {
+    "success": 29,
+    "dropped": 1
+   },
+   "cost_usd_so_far": 4.22,
+   "wall_s": 7.0
+  }
+ ],
+ "tool_counts": {
+  "run_python": 19,
+  "write_controller": 2,
+  "run_trials": 4,
+  "inspect_episode": 3,
+  "view_frames": 1,
+  "edit_controller": 10,
+  "submit": 1
+ },
+ "wall_s": 815.8,
+ "final_controller": "controller.py"
+}

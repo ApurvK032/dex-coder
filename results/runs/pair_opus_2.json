@@ -1,0 +1,306 @@
+{
+ "config": {
+  "run_id": "pair_opus_2",
+  "kind": "pair",
+  "model": "claude-opus-5-5",
+  "max_turns": 40,
+  "max_usd": 6.0,
+  "effort": "high",
+  "max_wall_s": 10800,
+  "workers": 4
+ },
+ "end_reason": "submitted",
+ "submitted": true,
+ "notes": "This controller is unreliable: it succeeded on only about 2 of 16 practice episodes (12\u201316%), and most failures were timeouts. Its main parts:\n- Grasping: damped-least-squares IK on the private model gives a palm-down top grasp. A small integral term corrects servo sag. Before grasping, the controller tries the 4 hand yaws that line the fingers up with the cube's faces. It scores each one by IK reachability, an arm-collision check, and a penalty for pointing the clamp axis at nearby cubes. It then descends, closes, and lifts. If the cube does not come up with the hand, it opens and tries again.\n- Placing: the cubes go in diagonally opposite corners of the bin, because that arrangement fits two cubes at any yaw. For each candidate corner and hand yaw, the controller works out the slot from the cube's predicted yaw, using the cube's measured offset in the hand. It scores the options by IK reachability, with no collisions allowed. It lowers until the cube is just above the rim, opens the thumb slowly, slides the curled fingers up, then opens fully.\n- Fix-up: after both cubes are placed, if a named cube is outside the bin or tilted, it picks that cube up again and re-places it, as long as there is time left.\n\nKnown weaknesses, which cause most failures:\n1. The far corners of both bins (x \u2248 0.42) are at the edge of the right arm's reach, so cubes end up 0.5\u20131 cm short of the target.\n2. Letting go knocks the cube 1\u20133 cm sideways. Within the bin's 1 cm of slack, the second cube often lands tilted on the first.\n3. Failed grasps and retries waste time, and some episodes hit the 40 s limit even when both cubes are already in the bin.\n4. Grasps sometimes nudge the third cube; it never ended up in a bin in the episodes shown.\n5. It was never tested with physics or sensing that differ from the practice setup.",
+ "turns": 37,
+ "cost_usd": 2.3094,
+ "usage": {
+  "input_tokens": 148,
+  "output_tokens": 61031,
+  "cache_creation_input_tokens": 130061,
+  "cache_read_input_tokens": 2189603
+ },
+ "versions": 27,
+ "trials": [
+  {
+   "k": 1,
+   "version": 2,
+   "turn": 7,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005
+   ],
+   "successes": 0,
+   "n": 6,
+   "outcomes": {
+    "timeout": 6
+   },
+   "cost_usd_so_far": 0.3507,
+   "wall_s": 10.2
+  },
+  {
+   "k": 2,
+   "version": 5,
+   "turn": 14,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007
+   ],
+   "successes": 0,
+   "n": 8,
+   "outcomes": {
+    "timeout": 7,
+    "dropped": 1
+   },
+   "cost_usd_so_far": 0.864,
+   "wall_s": 12.0
+  },
+  {
+   "k": 3,
+   "version": 6,
+   "turn": 16,
+   "seeds": [
+    100001
+   ],
+   "successes": 0,
+   "n": 1,
+   "outcomes": {
+    "timeout": 1
+   },
+   "cost_usd_so_far": 0.9667,
+   "wall_s": 3.8
+  },
+  {
+   "k": 4,
+   "version": 8,
+   "turn": 20,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007
+   ],
+   "successes": 1,
+   "n": 8,
+   "outcomes": {
+    "timeout": 7,
+    "success": 1
+   },
+   "cost_usd_so_far": 1.0977,
+   "wall_s": 15.7
+  },
+  {
+   "k": 5,
+   "version": 12,
+   "turn": 23,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007
+   ],
+   "successes": 2,
+   "n": 8,
+   "outcomes": {
+    "timeout": 6,
+    "success": 2
+   },
+   "cost_usd_so_far": 1.3059,
+   "wall_s": 11.1
+  },
+  {
+   "k": 6,
+   "version": 15,
+   "turn": 26,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011
+   ],
+   "successes": 1,
+   "n": 12,
+   "outcomes": {
+    "timeout": 11,
+    "success": 1
+   },
+   "cost_usd_so_far": 1.4969,
+   "wall_s": 17.0
+  },
+  {
+   "k": 7,
+   "version": 16,
+   "turn": 29,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011
+   ],
+   "successes": 2,
+   "n": 12,
+   "outcomes": {
+    "timeout": 10,
+    "success": 2
+   },
+   "cost_usd_so_far": 1.6893,
+   "wall_s": 16.8
+  },
+  {
+   "k": 8,
+   "version": 19,
+   "turn": 30,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011
+   ],
+   "successes": 1,
+   "n": 12,
+   "outcomes": {
+    "timeout": 11,
+    "success": 1
+   },
+   "cost_usd_so_far": 1.7745,
+   "wall_s": 15.8
+  },
+  {
+   "k": 9,
+   "version": 22,
+   "turn": 34,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011
+   ],
+   "successes": 0,
+   "n": 12,
+   "outcomes": {
+    "timeout": 12
+   },
+   "cost_usd_so_far": 2.0466,
+   "wall_s": 18.7
+  },
+  {
+   "k": 10,
+   "version": 24,
+   "turn": 35,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011
+   ],
+   "successes": 1,
+   "n": 12,
+   "outcomes": {
+    "timeout": 11,
+    "success": 1
+   },
+   "cost_usd_so_far": 2.1556,
+   "wall_s": 20.0
+  },
+  {
+   "k": 11,
+   "version": 27,
+   "turn": 36,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011,
+    100012,
+    100013,
+    100014,
+    100015
+   ],
+   "successes": 2,
+   "n": 16,
+   "outcomes": {
+    "timeout": 14,
+    "success": 2
+   },
+   "cost_usd_so_far": 2.2341,
+   "wall_s": 26.2
+  }
+ ],
+ "tool_counts": {
+  "run_python": 17,
+  "write_controller": 3,
+  "run_trials": 11,
+  "inspect_episode": 5,
+  "edit_controller": 24,
+  "view_frames": 2,
+  "submit": 1
+ },
+ "wall_s": 881.9,
+ "final_controller": "controller.py"
+}

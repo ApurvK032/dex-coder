@@ -1,0 +1,83 @@
+{
+ "controller": "/home/apurv/claude-code/dex-coder/outputs/runs/pair_fable_1/controller.py",
+ "kind": "pair",
+ "mode": "state",
+ "seeds": [
+  300000,
+  300099,
+  100
+ ],
+ "variants": {
+  "nominal": {
+   "successes": 49,
+   "n": 100,
+   "rate": 0.49,
+   "ci95": [
+    0.394,
+    0.587
+   ],
+   "outcomes": {
+    "success": 49,
+    "timeout": 47,
+    "dropped": 4
+   },
+   "wall_s": 106.7
+  },
+  "heavy_slippery": {
+   "successes": 76,
+   "n": 100,
+   "rate": 0.76,
+   "ci95": [
+    0.668,
+    0.833
+   ],
+   "outcomes": {
+    "success": 76,
+    "timeout": 20,
+    "dropped": 4
+   },
+   "wall_s": 109.8
+  },
+  "weak_motors": {
+   "successes": 46,
+   "n": 100,
+   "rate": 0.46,
+   "ci95": [
+    0.366,
+    0.557
+   ],
+   "outcomes": {
+    "timeout": 54,
+    "success": 46
+   },
+   "wall_s": 104.1
+  },
+  "noisy_sensing": {
+   "successes": 28,
+   "n": 100,
+   "rate": 0.28,
+   "ci95": [
+    0.201,
+    0.375
+   ],
+   "outcomes": {
+    "timeout": 63,
+    "success": 28,
+    "controller_error": 6,
+    "dropped": 3
+   },
+   "wall_s": 284.9
+  }
+ },
+ "code_flags": [],
+ "run_id": "pair_fable_1",
+ "provenance": {
+  "time": "2026-10-27T16:21:18-0500",
+  "git_commit": "30ec2d8eb8d853963a96f0a3e2047ed6e28828cb",
+  "git_dirty": false,
+  "humanoid_vla_commit": "f5df5026fba3287ea3a455c3c73d9ef503bb9483",
+  "mujoco": "3.14.0",
+  "python": "3.12.3",
+  "host": "godzilla"
+ }
+}

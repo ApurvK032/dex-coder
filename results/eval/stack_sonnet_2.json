@@ -1,0 +1,83 @@
+{
+ "controller": "/home/apurv/claude-code/dex-coder/outputs/runs/stack_sonnet_2/controller.py",
+ "kind": "stack",
+ "mode": "state",
+ "seeds": [
+  300000,
+  300099,
+  100
+ ],
+ "variants": {
+  "nominal": {
+   "successes": 90,
+   "n": 100,
+   "rate": 0.9,
+   "ci95": [
+    0.826,
+    0.945
+   ],
+   "outcomes": {
+    "success": 90,
+    "timeout": 7,
+    "dropped": 3
+   },
+   "wall_s": 36.1
+  },
+  "heavy_slippery": {
+   "successes": 89,
+   "n": 100,
+   "rate": 0.89,
+   "ci95": [
+    0.814,
+    0.937
+   ],
+   "outcomes": {
+    "success": 89,
+    "timeout": 9,
+    "dropped": 2
+   },
+   "wall_s": 39.2
+  },
+  "weak_motors": {
+   "successes": 90,
+   "n": 100,
+   "rate": 0.9,
+   "ci95": [
+    0.826,
+    0.945
+   ],
+   "outcomes": {
+    "success": 90,
+    "timeout": 8,
+    "dropped": 2
+   },
+   "wall_s": 36.7
+  },
+  "noisy_sensing": {
+   "successes": 75,
+   "n": 100,
+   "rate": 0.75,
+   "ci95": [
+    0.657,
+    0.825
+   ],
+   "outcomes": {
+    "success": 75,
+    "timeout": 19,
+    "dropped": 6
+   },
+   "wall_s": 45.1
+  }
+ },
+ "code_flags": [],
+ "run_id": "stack_sonnet_2",
+ "provenance": {
+  "time": "2026-10-27T18:05:00-0500",
+  "git_commit": "30ec2d8eb8d853963a96f0a3e2047ed6e28828cb",
+  "git_dirty": false,
+  "humanoid_vla_commit": "f5df5026fba3287ea3a455c3c73d9ef503bb9483",
+  "mujoco": "3.14.0",
+  "python": "3.12.3",
+  "host": "godzilla"
+ }
+}

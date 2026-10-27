@@ -1,0 +1,49 @@
+{
+ "run_id": "sort_sonnet_1",
+ "points": [
+  {
+   "trial": 1,
+   "turn": 3,
+   "version": 1,
+   "cost_usd_so_far": 0.0619,
+   "practice": [
+    0,
+    3
+   ],
+   "test_nominal": 0.2
+  },
+  {
+   "trial": 3,
+   "turn": 6,
+   "version": 2,
+   "cost_usd_so_far": 0.1766,
+   "practice": [
+    38,
+    40
+   ],
+   "test_nominal": 0.9333333333333333
+  },
+  {
+   "trial": 4,
+   "turn": 25,
+   "version": 7,
+   "cost_usd_so_far": 0.5983,
+   "practice": [
+    0,
+    1
+   ],
+   "test_nominal": 1.0
+  },
+  {
+   "trial": 5,
+   "turn": 32,
+   "version": 11,
+   "cost_usd_so_far": 0.7944,
+   "practice": [
+    0,
+    2
+   ],
+   "test_nominal": 1.0
+  }
+ ]
+}

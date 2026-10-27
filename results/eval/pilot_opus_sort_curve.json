@@ -1,0 +1,126 @@
+{
+ "run_id": "pilot_opus_sort",
+ "points": [
+  {
+   "trial": 2,
+   "turn": 10,
+   "version": 1,
+   "cost_usd_so_far": 0.353,
+   "practice": [
+    3,
+    10
+   ],
+   "test_nominal": 0.3
+  },
+  {
+   "trial": 3,
+   "turn": 15,
+   "version": 4,
+   "cost_usd_so_far": 0.5874,
+   "practice": [
+    19,
+    20
+   ],
+   "test_nominal": 0.8666666666666667
+  },
+  {
+   "trial": 4,
+   "turn": 17,
+   "version": 8,
+   "cost_usd_so_far": 0.7116,
+   "practice": [
+    11,
+    20
+   ],
+   "test_nominal": 0.5666666666666667
+  },
+  {
+   "trial": 6,
+   "turn": 21,
+   "version": 9,
+   "cost_usd_so_far": 0.8331,
+   "practice": [
+    38,
+    40
+   ],
+   "test_nominal": 0.9
+  },
+  {
+   "trial": 7,
+   "turn": 24,
+   "version": 10,
+   "cost_usd_so_far": 1.0496,
+   "practice": [
+    18,
+    20
+   ],
+   "test_nominal": 0.7
+  },
+  {
+   "trial": 8,
+   "turn": 26,
+   "version": 11,
+   "cost_usd_so_far": 1.156,
+   "practice": [
+    19,
+    20
+   ],
+   "test_nominal": 0.9
+  },
+  {
+   "trial": 9,
+   "turn": 29,
+   "version": 13,
+   "cost_usd_so_far": 1.29,
+   "practice": [
+    37,
+    40
+   ],
+   "test_nominal": 0.9666666666666667
+  },
+  {
+   "trial": 10,
+   "turn": 31,
+   "version": 14,
+   "cost_usd_so_far": 1.3713,
+   "practice": [
+    1,
+    4
+   ],
+   "test_nominal": 0.9666666666666667
+  },
+  {
+   "trial": 11,
+   "turn": 33,
+   "version": 15,
+   "cost_usd_so_far": 1.4497,
+   "practice": [
+    2,
+    4
+   ],
+   "test_nominal": 0.9666666666666667
+  },
+  {
+   "trial": 12,
+   "turn": 34,
+   "version": 18,
+   "cost_usd_so_far": 1.515,
+   "practice": [
+    4,
+    6
+   ],
+   "test_nominal": 0.9333333333333333
+  },
+  {
+   "trial": 15,
+   "turn": 37,
+   "version": 19,
+   "cost_usd_so_far": 1.6749,
+   "practice": [
+    40,
+    40
+   ],
+   "test_nominal": 1.0
+  }
+ ]
+}

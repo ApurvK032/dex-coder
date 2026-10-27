@@ -1,0 +1,71 @@
+{
+ "run_id": "sort_fable_2",
+ "points": [
+  {
+   "trial": 1,
+   "turn": 11,
+   "version": 1,
+   "cost_usd_so_far": 1.5356,
+   "practice": [
+    6,
+    10
+   ],
+   "test_nominal": 0.5666666666666667
+  },
+  {
+   "trial": 2,
+   "turn": 16,
+   "version": 2,
+   "cost_usd_so_far": 2.3269,
+   "practice": [
+    10,
+    10
+   ],
+   "test_nominal": 0.8333333333333334
+  },
+  {
+   "trial": 3,
+   "turn": 23,
+   "version": 4,
+   "cost_usd_so_far": 2.8017,
+   "practice": [
+    16,
+    20
+   ],
+   "test_nominal": 0.7666666666666667
+  },
+  {
+   "trial": 4,
+   "turn": 31,
+   "version": 10,
+   "cost_usd_so_far": 3.4817,
+   "practice": [
+    25,
+    30
+   ],
+   "test_nominal": 0.8666666666666667
+  },
+  {
+   "trial": 5,
+   "turn": 35,
+   "version": 11,
+   "cost_usd_so_far": 4.3247,
+   "practice": [
+    20,
+    30
+   ],
+   "test_nominal": 0.7
+  },
+  {
+   "trial": 6,
+   "turn": 38,
+   "version": 13,
+   "cost_usd_so_far": 4.5279,
+   "practice": [
+    26,
+    30
+   ],
+   "test_nominal": 0.7666666666666667
+  }
+ ]
+}

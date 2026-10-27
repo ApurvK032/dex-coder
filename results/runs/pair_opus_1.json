@@ -1,0 +1,435 @@
+{
+ "config": {
+  "run_id": "pair_opus_1",
+  "kind": "pair",
+  "model": "claude-opus-5-5",
+  "max_turns": 40,
+  "max_usd": 6.0,
+  "effort": "high",
+  "max_wall_s": 10800,
+  "workers": 4
+ },
+ "end_reason": "submitted",
+ "submitted": true,
+ "notes": "Controller: IK-based pick and place with a state machine (damped least-squares IK on the private model, null-space pull toward a fixed nominal arm pose, warm start with a fallback re-solve).\n- Grasp: palm down, with the site x axis lined up with one of the cube's face normals. It picks among the 4 headings and a few palm rolls (0 to -0.6 rad) by checking IK reachability at grasp, mid and hover heights, plus how low that roll lets it place in the target slot. Hover at 0.90 m, descend to the cube, close fully (closure 1), lift. A failed lift is retried; a cube held tilted more than 0.2 rad is put back and grasped again; a heading that couldn't be reached is penalised on the retry.\n- Place: from the measured cube and hand poses it works out the hand rotation that sets the cube level and lined up with the bin. Two slots split along y (\u00b12.85 cm). For the right bin the easy +y slot is filled first, because the -y slot can't be reached low. The second slot is moved to where the first cube actually landed (shifted 8 mm in +x so the curled fingers clear the first cube). While lowering, the cube's xy and yaw are corrected from feedback. Release opens the thumb only (closure 0.42), lifts the hand, then opens fully. If the cube didn't seat (z > 0.818, e.g. bridging the other cube and the wall), the closed hand pushes it down (up to 2 tries).\n- Results: 16/16 on seeds 100000-100015 and 25/30 on seeds 100100-100129. The 25/30 run was before the last change: transport speed to the bin went from 0.25 to 0.2 m/s to reduce slipping. The final file was not re-run after that edit.\n- Known weaknesses: there is no collision avoidance. A cube that slips while being carried, or a fumbled grasp, can knock a neighbouring cube off the near table edge (cubes at x\u22480.17, edge at 0.14); this caused 3 \"dropped\" failures. The right bin's -y slot is at the edge of the arm's reach, so that cube is dropped from about 3-8 cm up. There is no recovery if a cube ends up outside the bins after a failed placement. The fixed geometric margins (slot positions, release heights) may be sensitive to different physics.",
+ "turns": 40,
+ "cost_usd": 3.313,
+ "usage": {
+  "input_tokens": 160,
+  "output_tokens": 83476,
+  "cache_creation_input_tokens": 198912,
+  "cache_read_input_tokens": 3241520
+ },
+ "versions": 27,
+ "trials": [
+  {
+   "k": 1,
+   "version": 2,
+   "turn": 7,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005
+   ],
+   "successes": 0,
+   "n": 6,
+   "outcomes": {
+    "timeout": 5,
+    "dropped": 1
+   },
+   "cost_usd_so_far": 0.4129,
+   "wall_s": 9.7
+  },
+  {
+   "k": 2,
+   "version": 2,
+   "turn": 12,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005
+   ],
+   "successes": 0,
+   "n": 6,
+   "outcomes": {
+    "timeout": 5,
+    "dropped": 1
+   },
+   "cost_usd_so_far": 0.6499,
+   "wall_s": 9.4
+  },
+  {
+   "k": 3,
+   "version": 3,
+   "turn": 13,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005
+   ],
+   "successes": 1,
+   "n": 6,
+   "outcomes": {
+    "timeout": 5,
+    "success": 1
+   },
+   "cost_usd_so_far": 0.7746,
+   "wall_s": 15.2
+  },
+  {
+   "k": 4,
+   "version": 6,
+   "turn": 15,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011
+   ],
+   "successes": 3,
+   "n": 12,
+   "outcomes": {
+    "timeout": 9,
+    "success": 3
+   },
+   "cost_usd_so_far": 0.8615,
+   "wall_s": 15.3
+  },
+  {
+   "k": 5,
+   "version": 7,
+   "turn": 21,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011
+   ],
+   "successes": 5,
+   "n": 12,
+   "outcomes": {
+    "timeout": 7,
+    "success": 5
+   },
+   "cost_usd_so_far": 1.4051,
+   "wall_s": 14.5
+  },
+  {
+   "k": 6,
+   "version": 8,
+   "turn": 25,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011
+   ],
+   "successes": 5,
+   "n": 12,
+   "outcomes": {
+    "timeout": 7,
+    "success": 5
+   },
+   "cost_usd_so_far": 1.869,
+   "wall_s": 15.5
+  },
+  {
+   "k": 7,
+   "version": 10,
+   "turn": 27,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011
+   ],
+   "successes": 7,
+   "n": 12,
+   "outcomes": {
+    "success": 7,
+    "timeout": 5
+   },
+   "cost_usd_so_far": 2.0684,
+   "wall_s": 13.3
+  },
+  {
+   "k": 8,
+   "version": 13,
+   "turn": 29,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011
+   ],
+   "successes": 5,
+   "n": 12,
+   "outcomes": {
+    "timeout": 7,
+    "success": 5
+   },
+   "cost_usd_so_far": 2.2446,
+   "wall_s": 16.5
+  },
+  {
+   "k": 9,
+   "version": 15,
+   "turn": 30,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011,
+    100012,
+    100013,
+    100014,
+    100015
+   ],
+   "successes": 7,
+   "n": 16,
+   "outcomes": {
+    "timeout": 9,
+    "success": 7
+   },
+   "cost_usd_so_far": 2.3612,
+   "wall_s": 20.5
+  },
+  {
+   "k": 10,
+   "version": 19,
+   "turn": 32,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011,
+    100012,
+    100013,
+    100014,
+    100015
+   ],
+   "successes": 9,
+   "n": 16,
+   "outcomes": {
+    "success": 9,
+    "timeout": 7
+   },
+   "cost_usd_so_far": 2.5236,
+   "wall_s": 18.6
+  },
+  {
+   "k": 11,
+   "version": 23,
+   "turn": 34,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011,
+    100012,
+    100013,
+    100014,
+    100015
+   ],
+   "successes": 10,
+   "n": 16,
+   "outcomes": {
+    "success": 10,
+    "timeout": 6
+   },
+   "cost_usd_so_far": 2.7734,
+   "wall_s": 15.2
+  },
+  {
+   "k": 12,
+   "version": 24,
+   "turn": 36,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011,
+    100012,
+    100013,
+    100014,
+    100015
+   ],
+   "successes": 10,
+   "n": 16,
+   "outcomes": {
+    "success": 10,
+    "timeout": 6
+   },
+   "cost_usd_so_far": 2.9814,
+   "wall_s": 15.4
+  },
+  {
+   "k": 13,
+   "version": 25,
+   "turn": 37,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011,
+    100012,
+    100013,
+    100014,
+    100015
+   ],
+   "successes": 16,
+   "n": 16,
+   "outcomes": {
+    "success": 16
+   },
+   "cost_usd_so_far": 3.0901,
+   "wall_s": 12.8
+  },
+  {
+   "k": 14,
+   "version": 26,
+   "turn": 38,
+   "seeds": [
+    100100,
+    100101,
+    100102,
+    100103,
+    100104,
+    100105,
+    100106,
+    100107,
+    100108,
+    100109,
+    100110,
+    100111,
+    100112,
+    100113,
+    100114,
+    100115,
+    100116,
+    100117,
+    100118,
+    100119,
+    100120,
+    100121,
+    100122,
+    100123,
+    100124,
+    100125,
+    100126,
+    100127,
+    100128,
+    100129
+   ],
+   "successes": 25,
+   "n": 30,
+   "outcomes": {
+    "success": 25,
+    "dropped": 3,
+    "timeout": 2
+   },
+   "cost_usd_so_far": 3.1831,
+   "wall_s": 28.1
+  }
+ ],
+ "tool_counts": {
+  "run_python": 20,
+  "write_controller": 4,
+  "run_trials": 14,
+  "edit_controller": 26,
+  "view_frames": 3,
+  "inspect_episode": 2,
+  "submit": 1
+ },
+ "wall_s": 1022.0,
+ "final_controller": "controller.py"
+}

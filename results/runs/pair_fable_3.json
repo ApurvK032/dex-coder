@@ -1,0 +1,143 @@
+{
+ "config": {
+  "run_id": "pair_fable_3",
+  "kind": "pair",
+  "model": "claude-fable-5-1",
+  "max_turns": 40,
+  "max_usd": 12.0,
+  "effort": "high",
+  "max_wall_s": 10800,
+  "workers": 4
+ },
+ "end_reason": "turn limit",
+ "submitted": false,
+ "notes": null,
+ "turns": 40,
+ "cost_usd": 5.8699,
+ "usage": {
+  "input_tokens": 160,
+  "output_tokens": 75057,
+  "cache_creation_input_tokens": 121188,
+  "cache_read_input_tokens": 2402396
+ },
+ "versions": 13,
+ "trials": [
+  {
+   "k": 1,
+   "version": 1,
+   "turn": 10,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004
+   ],
+   "successes": 0,
+   "n": 5,
+   "outcomes": {
+    "dropped": 3,
+    "timeout": 2
+   },
+   "cost_usd_so_far": 1.5273,
+   "wall_s": 4.7
+  },
+  {
+   "k": 2,
+   "version": 2,
+   "turn": 16,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004
+   ],
+   "successes": 1,
+   "n": 5,
+   "outcomes": {
+    "timeout": 4,
+    "success": 1
+   },
+   "cost_usd_so_far": 2.1789,
+   "wall_s": 10.4
+  },
+  {
+   "k": 3,
+   "version": 3,
+   "turn": 23,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005
+   ],
+   "successes": 0,
+   "n": 6,
+   "outcomes": {
+    "timeout": 5,
+    "dropped": 1
+   },
+   "cost_usd_so_far": 3.4532,
+   "wall_s": 7.3
+  },
+  {
+   "k": 4,
+   "version": 11,
+   "turn": 34,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007
+   ],
+   "successes": 0,
+   "n": 8,
+   "outcomes": {
+    "timeout": 6,
+    "dropped": 2
+   },
+   "cost_usd_so_far": 4.5234,
+   "wall_s": 15.0
+  },
+  {
+   "k": 5,
+   "version": 12,
+   "turn": 39,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007
+   ],
+   "successes": 0,
+   "n": 8,
+   "outcomes": {
+    "timeout": 6,
+    "dropped": 2
+   },
+   "cost_usd_so_far": 5.7469,
+   "wall_s": 10.7
+  }
+ ],
+ "tool_counts": {
+  "run_python": 16,
+  "write_controller": 4,
+  "run_trials": 5,
+  "view_frames": 3,
+  "inspect_episode": 3,
+  "edit_controller": 9
+ },
+ "wall_s": 985.7,
+ "final_controller": "controller.py"
+}

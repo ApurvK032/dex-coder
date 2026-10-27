@@ -1,0 +1,161 @@
+{
+ "config": {
+  "run_id": "sort_sonnet_1",
+  "kind": "sort",
+  "model": "claude-sonnet-5-5",
+  "max_turns": 40,
+  "max_usd": 4.0,
+  "effort": "high",
+  "max_wall_s": 10800,
+  "workers": 4
+ },
+ "end_reason": "turn limit",
+ "submitted": false,
+ "notes": null,
+ "turns": 40,
+ "cost_usd": 1.041,
+ "usage": {
+  "input_tokens": 160,
+  "output_tokens": 43985,
+  "cache_creation_input_tokens": 85455,
+  "cache_read_input_tokens": 1935946
+ },
+ "versions": 17,
+ "trials": [
+  {
+   "k": 1,
+   "version": 1,
+   "turn": 3,
+   "seeds": [
+    100000,
+    100001,
+    100002
+   ],
+   "successes": 0,
+   "n": 3,
+   "outcomes": {
+    "timeout": 2,
+    "dropped": 1
+   },
+   "cost_usd_so_far": 0.0619,
+   "wall_s": 2.9
+  },
+  {
+   "k": 2,
+   "version": 2,
+   "turn": 5,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005
+   ],
+   "successes": 6,
+   "n": 6,
+   "outcomes": {
+    "success": 6
+   },
+   "cost_usd_so_far": 0.1504,
+   "wall_s": 2.6
+  },
+  {
+   "k": 3,
+   "version": 2,
+   "turn": 6,
+   "seeds": [
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011,
+    100012,
+    100013,
+    100014,
+    100015,
+    100016,
+    100017,
+    100018,
+    100019,
+    100020,
+    100021,
+    100022,
+    100023,
+    100024,
+    100025,
+    100026,
+    100027,
+    100028,
+    100029,
+    100030,
+    100031,
+    100032,
+    100033,
+    100034,
+    100035,
+    100036,
+    100037,
+    100038,
+    100039,
+    100040,
+    100041,
+    100042,
+    100043,
+    100044,
+    100045
+   ],
+   "successes": 38,
+   "n": 40,
+   "outcomes": {
+    "success": 38,
+    "timeout": 2
+   },
+   "cost_usd_so_far": 0.1766,
+   "wall_s": 12.4
+  },
+  {
+   "k": 4,
+   "version": 7,
+   "turn": 25,
+   "seeds": [
+    100000
+   ],
+   "successes": 0,
+   "n": 1,
+   "outcomes": {
+    "timeout": 1
+   },
+   "cost_usd_so_far": 0.5983,
+   "wall_s": 2.1
+  },
+  {
+   "k": 5,
+   "version": 11,
+   "turn": 32,
+   "seeds": [
+    100001,
+    100022
+   ],
+   "successes": 0,
+   "n": 2,
+   "outcomes": {
+    "dropped": 1,
+    "timeout": 1
+   },
+   "cost_usd_so_far": 0.7944,
+   "wall_s": 2.7
+  }
+ ],
+ "tool_counts": {
+  "run_python": 30,
+  "write_controller": 3,
+  "run_trials": 5,
+  "view_frames": 2,
+  "inspect_episode": 2,
+  "edit_controller": 14
+ },
+ "wall_s": 1200.4,
+ "final_controller": "controller.py"
+}

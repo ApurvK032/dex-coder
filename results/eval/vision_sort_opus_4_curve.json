@@ -1,0 +1,93 @@
+{
+ "run_id": "vision_sort_opus_4",
+ "points": [
+  {
+   "trial": 1,
+   "turn": 4,
+   "version": 1,
+   "cost_usd_so_far": 0.0688,
+   "practice": [
+    0,
+    1
+   ],
+   "test_nominal": 0.0
+  },
+  {
+   "trial": 2,
+   "turn": 12,
+   "version": 2,
+   "cost_usd_so_far": 0.4092,
+   "practice": [
+    3,
+    6
+   ],
+   "test_nominal": 0.6333333333333333
+  },
+  {
+   "trial": 4,
+   "turn": 21,
+   "version": 4,
+   "cost_usd_so_far": 0.8987,
+   "practice": [
+    9,
+    10
+   ],
+   "test_nominal": 0.8333333333333334
+  },
+  {
+   "trial": 5,
+   "turn": 22,
+   "version": 5,
+   "cost_usd_so_far": 1.0643,
+   "practice": [
+    9,
+    10
+   ],
+   "test_nominal": 0.8666666666666667
+  },
+  {
+   "trial": 6,
+   "turn": 23,
+   "version": 8,
+   "cost_usd_so_far": 1.19,
+   "practice": [
+    11,
+    12
+   ],
+   "test_nominal": 0.9333333333333333
+  },
+  {
+   "trial": 7,
+   "turn": 26,
+   "version": 13,
+   "cost_usd_so_far": 1.4422,
+   "practice": [
+    12,
+    12
+   ],
+   "test_nominal": 1.0
+  },
+  {
+   "trial": 8,
+   "turn": 43,
+   "version": 23,
+   "cost_usd_so_far": 2.3855,
+   "practice": [
+    20,
+    20
+   ],
+   "test_nominal": 1.0
+  },
+  {
+   "trial": 9,
+   "turn": 47,
+   "version": 25,
+   "cost_usd_so_far": 2.6612,
+   "practice": [
+    20,
+    20
+   ],
+   "test_nominal": 1.0
+  }
+ ]
+}

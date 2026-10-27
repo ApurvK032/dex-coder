@@ -1,0 +1,115 @@
+{
+ "run_id": "stack_sonnet_3",
+ "points": [
+  {
+   "trial": 2,
+   "turn": 4,
+   "version": 1,
+   "cost_usd_so_far": 0.0728,
+   "practice": [
+    24,
+    40
+   ],
+   "test_nominal": 0.4666666666666667
+  },
+  {
+   "trial": 3,
+   "turn": 9,
+   "version": 2,
+   "cost_usd_so_far": 0.2339,
+   "practice": [
+    19,
+    40
+   ],
+   "test_nominal": 0.36666666666666664
+  },
+  {
+   "trial": 4,
+   "turn": 15,
+   "version": 3,
+   "cost_usd_so_far": 0.4466,
+   "practice": [
+    21,
+    40
+   ],
+   "test_nominal": 0.5
+  },
+  {
+   "trial": 5,
+   "turn": 17,
+   "version": 7,
+   "cost_usd_so_far": 0.5115,
+   "practice": [
+    30,
+    40
+   ],
+   "test_nominal": 0.7
+  },
+  {
+   "trial": 6,
+   "turn": 26,
+   "version": 10,
+   "cost_usd_so_far": 0.7397,
+   "practice": [
+    34,
+    40
+   ],
+   "test_nominal": 0.8333333333333334
+  },
+  {
+   "trial": 7,
+   "turn": 29,
+   "version": 15,
+   "cost_usd_so_far": 0.8317,
+   "practice": [
+    37,
+    40
+   ],
+   "test_nominal": 0.8
+  },
+  {
+   "trial": 8,
+   "turn": 32,
+   "version": 19,
+   "cost_usd_so_far": 0.9448,
+   "practice": [
+    28,
+    40
+   ],
+   "test_nominal": 0.6
+  },
+  {
+   "trial": 9,
+   "turn": 33,
+   "version": 24,
+   "cost_usd_so_far": 0.992,
+   "practice": [
+    32,
+    40
+   ],
+   "test_nominal": 0.7
+  },
+  {
+   "trial": 10,
+   "turn": 38,
+   "version": 29,
+   "cost_usd_so_far": 1.1456,
+   "practice": [
+    36,
+    40
+   ],
+   "test_nominal": 0.8666666666666667
+  },
+  {
+   "trial": 11,
+   "turn": 39,
+   "version": 30,
+   "cost_usd_so_far": 1.1811,
+   "practice": [
+    4,
+    8
+   ],
+   "test_nominal": 0.8666666666666667
+  }
+ ]
+}

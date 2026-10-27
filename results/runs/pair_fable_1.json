@@ -1,0 +1,168 @@
+{
+ "config": {
+  "run_id": "pair_fable_1",
+  "kind": "pair",
+  "model": "claude-fable-5-1",
+  "max_turns": 40,
+  "max_usd": 12.0,
+  "effort": "high",
+  "max_wall_s": 10800,
+  "workers": 4
+ },
+ "end_reason": "submitted",
+ "submitted": true,
+ "notes": "Strategy: scripted generator-based state machine with damped-least-squares IK (multi-seed global IK for reachability + per-step Cartesian servo with nullspace pull toward the global solution for straight-line motions). Top-down palm-down grasp aligned to the cube's faces (choosing the most reachable of the 4 yaw candidates), slow closure ramp, lift, verify the cube is held. Placement: cube 1 is dropped in the far half of the bin (along +x for the left bin, along +y for the right bin because of arm reach), then cube 2 (still held, bottom just below rim) is used to push cube 1 flush against the far wall; the hand then backs off so cube 2 clears cube 1 and releases cube 2 into the remaining 6 cm slot. Closed-loop corrections use observed cube position and yaw before release (hand yaw adjusted so the cube is axis-aligned with the bin). If cube 2 ends up raised (on cube 1 / wall), it retries by re-grasping and re-dropping while time remains.\nKnown weaknesses: ~65-75% success on practice seeds. The main failure is cube 2 landing tilted on cube 1 or the wall edge after a ~3 cm drop (the hand cannot enter the bin for an off-center set-down), especially for the right bin where the arm's reach is marginal (IK stalls, push less effective). Re-grasping a tilted cube inside the bin is unreliable. Sensing bias in cube position/yaw directly affects the tight (1 cm slack) fit.",
+ "turns": 39,
+ "cost_usd": 10.2647,
+ "usage": {
+  "input_tokens": 156,
+  "output_tokens": 133773,
+  "cache_creation_input_tokens": 208872,
+  "cache_read_input_tokens": 3854338
+ },
+ "versions": 9,
+ "trials": [
+  {
+   "k": 1,
+   "version": 1,
+   "turn": 12,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003
+   ],
+   "successes": 0,
+   "n": 4,
+   "outcomes": {
+    "timeout": 4
+   },
+   "cost_usd_so_far": 2.3289,
+   "wall_s": 5.1
+  },
+  {
+   "k": 2,
+   "version": 3,
+   "turn": 28,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005
+   ],
+   "successes": 3,
+   "n": 6,
+   "outcomes": {
+    "success": 3,
+    "timeout": 3
+   },
+   "cost_usd_so_far": 8.6773,
+   "wall_s": 8.1
+  },
+  {
+   "k": 3,
+   "version": 4,
+   "turn": 30,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007
+   ],
+   "successes": 5,
+   "n": 8,
+   "outcomes": {
+    "success": 5,
+    "timeout": 3
+   },
+   "cost_usd_so_far": 8.9484,
+   "wall_s": 10.0
+  },
+  {
+   "k": 4,
+   "version": 5,
+   "turn": 32,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007
+   ],
+   "successes": 5,
+   "n": 8,
+   "outcomes": {
+    "success": 5,
+    "timeout": 3
+   },
+   "cost_usd_so_far": 9.4541,
+   "wall_s": 10.6
+  },
+  {
+   "k": 5,
+   "version": 6,
+   "turn": 34,
+   "seeds": [
+    100008,
+    100009,
+    100010,
+    100011,
+    100012,
+    100013,
+    100014,
+    100015
+   ],
+   "successes": 5,
+   "n": 8,
+   "outcomes": {
+    "success": 5,
+    "timeout": 3
+   },
+   "cost_usd_so_far": 9.6858,
+   "wall_s": 11.3
+  },
+  {
+   "k": 6,
+   "version": 9,
+   "turn": 38,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007
+   ],
+   "successes": 6,
+   "n": 8,
+   "outcomes": {
+    "success": 6,
+    "timeout": 2
+   },
+   "cost_usd_so_far": 10.1262,
+   "wall_s": 8.8
+  }
+ ],
+ "tool_counts": {
+  "run_python": 21,
+  "write_controller": 1,
+  "run_trials": 6,
+  "view_frames": 1,
+  "inspect_episode": 1,
+  "edit_controller": 8,
+  "submit": 1
+ },
+ "wall_s": 1878.7,
+ "final_controller": "controller.py"
+}

@@ -1,0 +1,271 @@
+{
+ "config": {
+  "run_id": "vision_sort_opus_4",
+  "kind": "sort",
+  "model": "claude-opus-5-5",
+  "max_turns": 50,
+  "max_usd": 8.0,
+  "effort": "high",
+  "max_wall_s": 10800,
+  "workers": 4,
+  "mode": "vision"
+ },
+ "end_reason": "submitted",
+ "submitted": true,
+ "notes": "Pipeline: (1) Perception from the head camera only, during the first 3 frames: back-project depth to world points and classify cube colours by HSV hue (sat>0.3) among points 1\u20139 cm above the table. Each cube's xy is the centroid of its top-face points, and its yaw comes from a minimum-extent rotation search. Self-calibration: the table height is the median z of points near the table, and an xy offset comes from comparing the measured centroid of the bin-wall points (picked by height only, so lighting doesn't affect it) with clean reference values. This corrects head-camera pose bias. (2) Grasp planning: top-down grasp with the palm facing down and the pinch axis along a cube face. I try the 4 yaw candidates (cube yaw + k\u00b790\u00b0) with multi-seed damped-least-squares IK on robot.model. Shoulder roll is capped at 0.08 rad because the upper arm hits the torso above that. The cost covers IK error, joint margins, fingers pointing backward, and a swept-volume check of the finger and thumb paths against both bins and the other cubes. The hand aims 6 mm toward the fingers. (3) Motion: joint-space move to 10 cm above the cube with the fingers pre-curled (closure 0.35, which shortens the finger reach so it doesn't land on bin rims). Then a Cartesian descent, close to 1.0, and a lift of 14 cm. (4) Check: the grasp counts as failed if the thumb closed fully (empty hand) or the head camera still sees the target on the table. If so, open, re-perceive and retry. (5) Transfer: a Cartesian path (rise to at least 16.5 cm above the table, move over the bin, descend to 12 cm), solved offline as a chain of warm-started IK solutions that only force the palm to face down. The target is shifted for the typical cube offset inside the hand. If that path isn't reachable, it falls back to a multi-seed place pose reached through a high via-point. Then release, retreat upward, and re-check; if the cube is still on the table, retry. Results: 40/40 in the latest real-perception practice runs (52/52 across the last three). With true cube poses plus a 6\u201312 mm position bias, almost everything succeeded on the physics variants (weak_motors, heavy_slippery, noisy_sensing delay): one timeout out of 66 under noisy_sensing. Perception stays within about 8 mm offline under simulated brightness, tint, noise and 1\u00b0/1 cm calibration errors. Known weaknesses: cubes right next to a bin or another cube may need several grasp attempts, since there is no push-away strategy. Some yaw candidates are unreachable by IK, which limits the options. A cube pushed toward the near table edge (x\u22480.14) could fall off. The drop point lands within about 2\u20133 cm of the bin centre.",
+ "turns": 49,
+ "cost_usd": 2.7866,
+ "usage": {
+  "input_tokens": 196,
+  "output_tokens": 65684,
+  "cache_creation_input_tokens": 152762,
+  "cache_read_input_tokens": 3541519
+ },
+ "versions": 25,
+ "trials": [
+  {
+   "k": 1,
+   "version": 1,
+   "turn": 4,
+   "seeds": [
+    100000
+   ],
+   "successes": 0,
+   "n": 1,
+   "outcomes": {
+    "timeout": 1
+   },
+   "cost_usd_so_far": 0.0688,
+   "wall_s": 3.4
+  },
+  {
+   "k": 2,
+   "version": 2,
+   "turn": 12,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005
+   ],
+   "successes": 3,
+   "n": 6,
+   "outcomes": {
+    "timeout": 3,
+    "success": 3
+   },
+   "cost_usd_so_far": 0.4092,
+   "wall_s": 6.4
+  },
+  {
+   "k": 3,
+   "version": 4,
+   "turn": 14,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009
+   ],
+   "successes": 9,
+   "n": 10,
+   "outcomes": {
+    "success": 9,
+    "timeout": 1
+   },
+   "cost_usd_so_far": 0.5187,
+   "wall_s": 6.1
+  },
+  {
+   "k": 4,
+   "version": 4,
+   "turn": 21,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003,
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009
+   ],
+   "successes": 9,
+   "n": 10,
+   "outcomes": {
+    "success": 9,
+    "timeout": 1
+   },
+   "cost_usd_so_far": 0.8987,
+   "wall_s": 6.2
+  },
+  {
+   "k": 5,
+   "version": 5,
+   "turn": 22,
+   "seeds": [
+    100008,
+    100006,
+    100010,
+    100011,
+    100012,
+    100013,
+    100014,
+    100015,
+    100016,
+    100017
+   ],
+   "successes": 9,
+   "n": 10,
+   "outcomes": {
+    "success": 9,
+    "timeout": 1
+   },
+   "cost_usd_so_far": 1.0643,
+   "wall_s": 6.4
+  },
+  {
+   "k": 6,
+   "version": 8,
+   "turn": 23,
+   "seeds": [
+    100014,
+    100008,
+    100016,
+    100012,
+    100018,
+    100019,
+    100020,
+    100021,
+    100022,
+    100023,
+    100024,
+    100025
+   ],
+   "successes": 11,
+   "n": 12,
+   "outcomes": {
+    "success": 11,
+    "timeout": 1
+   },
+   "cost_usd_so_far": 1.19,
+   "wall_s": 10.1
+  },
+  {
+   "k": 7,
+   "version": 13,
+   "turn": 26,
+   "seeds": [
+    100012,
+    100022,
+    100023,
+    100018,
+    100000,
+    100004,
+    100026,
+    100027,
+    100028,
+    100029,
+    100030,
+    100031
+   ],
+   "successes": 12,
+   "n": 12,
+   "outcomes": {
+    "success": 12
+   },
+   "cost_usd_so_far": 1.4422,
+   "wall_s": 5.9
+  },
+  {
+   "k": 8,
+   "version": 23,
+   "turn": 43,
+   "seeds": [
+    100008,
+    100014,
+    100018,
+    100040,
+    100041,
+    100042,
+    100043,
+    100044,
+    100045,
+    100046,
+    100047,
+    100048,
+    100049,
+    100050,
+    100051,
+    100052,
+    100053,
+    100054,
+    100055,
+    100056
+   ],
+   "successes": 20,
+   "n": 20,
+   "outcomes": {
+    "success": 20
+   },
+   "cost_usd_so_far": 2.3855,
+   "wall_s": 9.4
+  },
+  {
+   "k": 9,
+   "version": 25,
+   "turn": 47,
+   "seeds": [
+    100060,
+    100061,
+    100062,
+    100063,
+    100064,
+    100065,
+    100066,
+    100067,
+    100068,
+    100069,
+    100070,
+    100071,
+    100072,
+    100073,
+    100074,
+    100075,
+    100076,
+    100077,
+    100078,
+    100079
+   ],
+   "successes": 20,
+   "n": 20,
+   "outcomes": {
+    "success": 20
+   },
+   "cost_usd_so_far": 2.6612,
+   "wall_s": 8.7
+  }
+ ],
+ "tool_counts": {
+  "get_observations": 4,
+  "run_python": 30,
+  "view_frames": 4,
+  "write_controller": 3,
+  "run_trials": 9,
+  "edit_controller": 22,
+  "inspect_episode": 3,
+  "submit": 1
+ },
+ "wall_s": 1034.7,
+ "final_controller": "controller.py"
+}

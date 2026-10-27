@@ -1,0 +1,82 @@
+{
+ "run_id": "vision_sort_opus_5",
+ "points": [
+  {
+   "trial": 2,
+   "turn": 7,
+   "version": 1,
+   "cost_usd_so_far": 0.2951,
+   "practice": [
+    17,
+    40
+   ],
+   "test_nominal": 0.36666666666666664
+  },
+  {
+   "trial": 3,
+   "turn": 21,
+   "version": 6,
+   "cost_usd_so_far": 1.0099,
+   "practice": [
+    38,
+    40
+   ],
+   "test_nominal": 0.8666666666666667
+  },
+  {
+   "trial": 4,
+   "turn": 42,
+   "version": 29,
+   "cost_usd_so_far": 2.285,
+   "practice": [
+    35,
+    40
+   ],
+   "test_nominal": 0.9
+  },
+  {
+   "trial": 5,
+   "turn": 45,
+   "version": 33,
+   "cost_usd_so_far": 2.5123,
+   "practice": [
+    9,
+    14
+   ],
+   "test_nominal": 0.9333333333333333
+  },
+  {
+   "trial": 6,
+   "turn": 46,
+   "version": 35,
+   "cost_usd_so_far": 2.5894,
+   "practice": [
+    36,
+    40
+   ],
+   "test_nominal": 0.9333333333333333
+  },
+  {
+   "trial": 7,
+   "turn": 47,
+   "version": 36,
+   "cost_usd_so_far": 2.6773,
+   "practice": [
+    22,
+    26
+   ],
+   "test_nominal": 0.9333333333333333
+  },
+  {
+   "trial": 8,
+   "turn": 49,
+   "version": 39,
+   "cost_usd_so_far": 2.8173,
+   "practice": [
+    33,
+    36
+   ],
+   "test_nominal": 0.9333333333333333
+  }
+ ]
+}

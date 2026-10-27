@@ -1,0 +1,90 @@
+{
+ "controller": "/home/apurv/claude-code/dex-coder/outputs/runs/vision_sort_opus_4/controller.py",
+ "kind": "sort",
+ "mode": "vision",
+ "seeds": [
+  300000,
+  300099,
+  100
+ ],
+ "variants": {
+  "nominal": {
+   "successes": 100,
+   "n": 100,
+   "rate": 1.0,
+   "ci95": [
+    0.963,
+    1.0
+   ],
+   "outcomes": {
+    "success": 100
+   },
+   "wall_s": 188.3
+  },
+  "heavy_slippery": {
+   "successes": 98,
+   "n": 100,
+   "rate": 0.98,
+   "ci95": [
+    0.93,
+    0.994
+   ],
+   "outcomes": {
+    "success": 98,
+    "dropped": 1,
+    "timeout": 1
+   },
+   "wall_s": 187.8
+  },
+  "weak_motors": {
+   "successes": 100,
+   "n": 100,
+   "rate": 1.0,
+   "ci95": [
+    0.963,
+    1.0
+   ],
+   "outcomes": {
+    "success": 100
+   },
+   "wall_s": 185.2
+  },
+  "lighting": {
+   "successes": 100,
+   "n": 100,
+   "rate": 1.0,
+   "ci95": [
+    0.963,
+    1.0
+   ],
+   "outcomes": {
+    "success": 100
+   },
+   "wall_s": 176.5
+  },
+  "noisy_camera": {
+   "successes": 100,
+   "n": 100,
+   "rate": 1.0,
+   "ci95": [
+    0.963,
+    1.0
+   ],
+   "outcomes": {
+    "success": 100
+   },
+   "wall_s": 301.0
+  }
+ },
+ "code_flags": [],
+ "run_id": "vision_sort_opus_4",
+ "provenance": {
+  "time": "2026-10-27T17:37:06-0500",
+  "git_commit": "30ec2d8eb8d853963a96f0a3e2047ed6e28828cb",
+  "git_dirty": false,
+  "humanoid_vla_commit": "f5df5026fba3287ea3a455c3c73d9ef503bb9483",
+  "mujoco": "3.14.0",
+  "python": "3.12.3",
+  "host": "godzilla"
+ }
+}

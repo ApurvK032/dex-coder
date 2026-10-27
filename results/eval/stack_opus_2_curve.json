@@ -1,0 +1,49 @@
+{
+ "run_id": "stack_opus_2",
+ "points": [
+  {
+   "trial": 1,
+   "turn": 4,
+   "version": 1,
+   "cost_usd_so_far": 0.1864,
+   "practice": [
+    1,
+    10
+   ],
+   "test_nominal": 0.2
+  },
+  {
+   "trial": 2,
+   "turn": 9,
+   "version": 2,
+   "cost_usd_so_far": 0.4452,
+   "practice": [
+    9,
+    10
+   ],
+   "test_nominal": 0.8666666666666667
+  },
+  {
+   "trial": 3,
+   "turn": 20,
+   "version": 5,
+   "cost_usd_so_far": 0.9672,
+   "practice": [
+    0,
+    4
+   ],
+   "test_nominal": 0.9
+  },
+  {
+   "trial": 4,
+   "turn": 34,
+   "version": 10,
+   "cost_usd_so_far": 1.6315,
+   "practice": [
+    0,
+    2
+   ],
+   "test_nominal": 0.8333333333333334
+  }
+ ]
+}

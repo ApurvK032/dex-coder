@@ -1,0 +1,93 @@
+{
+ "run_id": "stack_sonnet_2",
+ "points": [
+  {
+   "trial": 2,
+   "turn": 4,
+   "version": 1,
+   "cost_usd_so_far": 0.0805,
+   "practice": [
+    24,
+    40
+   ],
+   "test_nominal": 0.4666666666666667
+  },
+  {
+   "trial": 3,
+   "turn": 8,
+   "version": 3,
+   "cost_usd_so_far": 0.1546,
+   "practice": [
+    0,
+    40
+   ],
+   "test_nominal": 0.0
+  },
+  {
+   "trial": 4,
+   "turn": 9,
+   "version": 4,
+   "cost_usd_so_far": 0.177,
+   "practice": [
+    24,
+    40
+   ],
+   "test_nominal": 0.5333333333333333
+  },
+  {
+   "trial": 5,
+   "turn": 17,
+   "version": 12,
+   "cost_usd_so_far": 0.3785,
+   "practice": [
+    33,
+    40
+   ],
+   "test_nominal": 0.7
+  },
+  {
+   "trial": 7,
+   "turn": 23,
+   "version": 15,
+   "cost_usd_so_far": 0.5232,
+   "practice": [
+    36,
+    40
+   ],
+   "test_nominal": 0.9333333333333333
+  },
+  {
+   "trial": 8,
+   "turn": 25,
+   "version": 19,
+   "cost_usd_so_far": 0.5663,
+   "practice": [
+    32,
+    40
+   ],
+   "test_nominal": 0.7
+  },
+  {
+   "trial": 9,
+   "turn": 29,
+   "version": 24,
+   "cost_usd_so_far": 0.6882,
+   "practice": [
+    37,
+    40
+   ],
+   "test_nominal": 0.9333333333333333
+  },
+  {
+   "trial": 10,
+   "turn": 39,
+   "version": 29,
+   "cost_usd_so_far": 0.9881,
+   "practice": [
+    40,
+    40
+   ],
+   "test_nominal": 0.9
+  }
+ ]
+}

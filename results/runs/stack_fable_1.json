@@ -1,0 +1,221 @@
+{
+ "config": {
+  "run_id": "stack_fable_1",
+  "kind": "stack",
+  "model": "claude-fable-5-1",
+  "max_turns": 40,
+  "max_usd": 12.0,
+  "effort": "high",
+  "max_wall_s": 10800,
+  "workers": 4
+ },
+ "end_reason": "submitted",
+ "submitted": true,
+ "notes": "Stack controller: damped-least-squares IK (position + orientation, nullspace bias toward a multi-seed global IK solution) drives the grasp site with a rate-limited Cartesian target. Hand orientation: palm down with 0.2 rad fingers-down tilt; yaw chosen among the 4 cube-diagonal candidates by IK reachability/joint-margin scoring (grasp across the cube's diagonal so the two fingers and thumb self-center the cube). Phases: pre-curl fingers (closure 0.38) -> move above target -> descend (stall/contact detection) -> close to 1.0 -> lift to z=0.92, measure cube offset in hand -> move above destination (re-choose yaw if needed) -> slow descent to dest+5.6cm -> release -> slow retreat; verifies the stack and retries grasp/place if it failed or the cube was lost. Joint-space servo-sag compensation (low-passed target-measured error) for weak motors. Tested ~95/97 on nominal practice seeds and on weak_motors / heavy_slippery / noisy_sensing variants. Known weaknesses: no obstacle awareness, so a neighbouring cube close to the target (within ~8 cm on the thumb side) can be knocked by the open thumb/fingers (one drop observed); retries after a bad placement can push cubes near the table edge off.",
+ "turns": 40,
+ "cost_usd": 4.3699,
+ "usage": {
+  "input_tokens": 160,
+  "output_tokens": 46351,
+  "cache_creation_input_tokens": 118096,
+  "cache_read_input_tokens": 2298031
+ },
+ "versions": 12,
+ "trials": [
+  {
+   "k": 1,
+   "version": 1,
+   "turn": 6,
+   "seeds": [
+    100000
+   ],
+   "successes": 0,
+   "n": 1,
+   "outcomes": {
+    "timeout": 1
+   },
+   "cost_usd_so_far": 0.5435,
+   "wall_s": 1.8
+  },
+  {
+   "k": 2,
+   "version": 2,
+   "turn": 11,
+   "seeds": [
+    100000,
+    100001,
+    100002
+   ],
+   "successes": 0,
+   "n": 3,
+   "outcomes": {
+    "timeout": 3
+   },
+   "cost_usd_so_far": 1.3093,
+   "wall_s": 3.6
+  },
+  {
+   "k": 3,
+   "version": 3,
+   "turn": 15,
+   "seeds": [
+    100000,
+    100001,
+    100002,
+    100003
+   ],
+   "successes": 4,
+   "n": 4,
+   "outcomes": {
+    "success": 4
+   },
+   "cost_usd_so_far": 2.159,
+   "wall_s": 1.9
+  },
+  {
+   "k": 4,
+   "version": 4,
+   "turn": 17,
+   "seeds": [
+    100004,
+    100005,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011,
+    100012,
+    100013,
+    100014,
+    100015,
+    100016,
+    100017,
+    100018,
+    100019,
+    100020,
+    100021,
+    100022,
+    100023
+   ],
+   "successes": 20,
+   "n": 20,
+   "outcomes": {
+    "success": 20
+   },
+   "cost_usd_so_far": 2.2763,
+   "wall_s": 6.6
+  },
+  {
+   "k": 5,
+   "version": 10,
+   "turn": 33,
+   "seeds": [
+    100024,
+    100025,
+    100026,
+    100027,
+    100028,
+    100029,
+    100030,
+    100031,
+    100032,
+    100033,
+    100034,
+    100035,
+    100036,
+    100037,
+    100038,
+    100039,
+    100040,
+    100041,
+    100042,
+    100043,
+    100044,
+    100045,
+    100046,
+    100047,
+    100048,
+    100049,
+    100050,
+    100051,
+    100052,
+    100053,
+    100054,
+    100055,
+    100056,
+    100057,
+    100058,
+    100059,
+    100060,
+    100061,
+    100062,
+    100063
+   ],
+   "successes": 39,
+   "n": 40,
+   "outcomes": {
+    "success": 39,
+    "dropped": 1
+   },
+   "cost_usd_so_far": 3.5546,
+   "wall_s": 9.4
+  },
+  {
+   "k": 6,
+   "version": 12,
+   "turn": 39,
+   "seeds": [
+    100040,
+    100064,
+    100065,
+    100066,
+    100067,
+    100068,
+    100069,
+    100070,
+    100071,
+    100072,
+    100073,
+    100074,
+    100075,
+    100076,
+    100077,
+    100078,
+    100079,
+    100080,
+    100081,
+    100082,
+    100083,
+    100084,
+    100085,
+    100086,
+    100087,
+    100088,
+    100089,
+    100090,
+    100091,
+    100092
+   ],
+   "successes": 29,
+   "n": 30,
+   "outcomes": {
+    "success": 29,
+    "dropped": 1
+   },
+   "cost_usd_so_far": 4.1905,
+   "wall_s": 7.8
+  }
+ ],
+ "tool_counts": {
+  "run_python": 16,
+  "write_controller": 3,
+  "run_trials": 6,
+  "view_frames": 4,
+  "edit_controller": 9,
+  "inspect_episode": 2,
+  "submit": 1
+ },
+ "wall_s": 711.6,
+ "final_controller": "controller.py"
+}

@@ -1,0 +1,49 @@
+{
+ "run_id": "vision_sort_opus_1",
+ "points": [
+  {
+   "trial": 2,
+   "turn": 13,
+   "version": 1,
+   "cost_usd_so_far": 0.4618,
+   "practice": [
+    7,
+    20
+   ],
+   "test_nominal": 0.16666666666666666
+  },
+  {
+   "trial": 3,
+   "turn": 17,
+   "version": 2,
+   "cost_usd_so_far": 0.735,
+   "practice": [
+    8,
+    20
+   ],
+   "test_nominal": 0.16666666666666666
+  },
+  {
+   "trial": 4,
+   "turn": 42,
+   "version": 19,
+   "cost_usd_so_far": 1.99,
+   "practice": [
+    30,
+    30
+   ],
+   "test_nominal": 0.9333333333333333
+  },
+  {
+   "trial": 5,
+   "turn": 46,
+   "version": 21,
+   "cost_usd_so_far": 2.2021,
+   "practice": [
+    39,
+    40
+   ],
+   "test_nominal": 0.9
+  }
+ ]
+}

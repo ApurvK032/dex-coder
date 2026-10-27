@@ -1,0 +1,95 @@
+{
+ "controller": "/home/apurv/claude-code/dex-coder/outputs/runs/vision_sort_opus_1/controller.py",
+ "kind": "sort",
+ "mode": "vision",
+ "seeds": [
+  300000,
+  300099,
+  100
+ ],
+ "variants": {
+  "nominal": {
+   "successes": 95,
+   "n": 100,
+   "rate": 0.95,
+   "ci95": [
+    0.888,
+    0.978
+   ],
+   "outcomes": {
+    "success": 95,
+    "dropped": 3,
+    "timeout": 2
+   },
+   "wall_s": 167.1
+  },
+  "heavy_slippery": {
+   "successes": 94,
+   "n": 100,
+   "rate": 0.94,
+   "ci95": [
+    0.875,
+    0.972
+   ],
+   "outcomes": {
+    "success": 94,
+    "dropped": 4,
+    "timeout": 2
+   },
+   "wall_s": 172.2
+  },
+  "weak_motors": {
+   "successes": 100,
+   "n": 100,
+   "rate": 1.0,
+   "ci95": [
+    0.963,
+    1.0
+   ],
+   "outcomes": {
+    "success": 100
+   },
+   "wall_s": 161.1
+  },
+  "lighting": {
+   "successes": 98,
+   "n": 100,
+   "rate": 0.98,
+   "ci95": [
+    0.93,
+    0.994
+   ],
+   "outcomes": {
+    "success": 98,
+    "dropped": 2
+   },
+   "wall_s": 128.4
+  },
+  "noisy_camera": {
+   "successes": 98,
+   "n": 100,
+   "rate": 0.98,
+   "ci95": [
+    0.93,
+    0.994
+   ],
+   "outcomes": {
+    "success": 98,
+    "timeout": 1,
+    "dropped": 1
+   },
+   "wall_s": 363.9
+  }
+ },
+ "code_flags": [],
+ "run_id": "vision_sort_opus_1",
+ "provenance": {
+  "time": "2026-10-27T16:30:35-0500",
+  "git_commit": "30ec2d8eb8d853963a96f0a3e2047ed6e28828cb",
+  "git_dirty": false,
+  "humanoid_vla_commit": "f5df5026fba3287ea3a455c3c73d9ef503bb9483",
+  "mujoco": "3.14.0",
+  "python": "3.12.3",
+  "host": "godzilla"
+ }
+}
