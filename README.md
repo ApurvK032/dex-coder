@@ -8,6 +8,7 @@ the agent never saw, with the dollars it cost.**
 ![MuJoCo 3.14](https://img.shields.io/badge/MuJoCo-3.14-1f6feb)
 ![Robot: Unitree G1 + Dex3](https://img.shields.io/badge/robot-Unitree%20G1%20%2B%20Dex3-555)
 ![Built on humanoid-vla](https://img.shields.io/badge/built%20on-humanoid--vla-2a78d6)
+![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
 <p align="center">
   <img src="docs/media/vision_sort_opus_4.gif" width="760" alt="A camera-only controller written by Claude Opus 5.5 sorting a cube into a bin on a held-out layout">
@@ -212,3 +213,9 @@ learning. dex-coder's contribution is the measurement: contact-rich grasping wit
 from exact state and from cameras alone, a direct comparison with a hand-written expert on the
 same judge, held-out physics, lighting and sensing, an isolation design in which the controller
 cannot see the simulator, and the dollar cost of every result.
+
+## License
+
+[MIT](LICENSE). The simulator, tasks and reference controller come from
+[humanoid-vla](https://github.com/ApurvK032/humanoid-vla); the robot models are downloaded from
+MuJoCo Menagerie under their own licenses.
