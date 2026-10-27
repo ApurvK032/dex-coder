@@ -1,0 +1,191 @@
+[
+ {
+  "run_id": "sort_opus_1",
+  "kind": "sort",
+  "model": "opus",
+  "max_turns": 40,
+  "max_usd": 6
+ },
+ {
+  "run_id": "sort_fable_1",
+  "kind": "sort",
+  "model": "fable",
+  "max_turns": 40,
+  "max_usd": 12
+ },
+ {
+  "run_id": "sort_sonnet_1",
+  "kind": "sort",
+  "model": "sonnet",
+  "max_turns": 40,
+  "max_usd": 4
+ },
+ {
+  "run_id": "stack_opus_1",
+  "kind": "stack",
+  "model": "opus",
+  "max_turns": 40,
+  "max_usd": 6
+ },
+ {
+  "run_id": "stack_fable_1",
+  "kind": "stack",
+  "model": "fable",
+  "max_turns": 40,
+  "max_usd": 12
+ },
+ {
+  "run_id": "stack_sonnet_1",
+  "kind": "stack",
+  "model": "sonnet",
+  "max_turns": 40,
+  "max_usd": 4
+ },
+ {
+  "run_id": "pair_opus_1",
+  "kind": "pair",
+  "model": "opus",
+  "max_turns": 40,
+  "max_usd": 6
+ },
+ {
+  "run_id": "pair_fable_1",
+  "kind": "pair",
+  "model": "fable",
+  "max_turns": 40,
+  "max_usd": 12
+ },
+ {
+  "run_id": "pair_sonnet_1",
+  "kind": "pair",
+  "model": "sonnet",
+  "max_turns": 40,
+  "max_usd": 4
+ },
+ {
+  "run_id": "sort_opus_2",
+  "kind": "sort",
+  "model": "opus",
+  "max_turns": 40,
+  "max_usd": 6
+ },
+ {
+  "run_id": "sort_fable_2",
+  "kind": "sort",
+  "model": "fable",
+  "max_turns": 40,
+  "max_usd": 12
+ },
+ {
+  "run_id": "sort_sonnet_2",
+  "kind": "sort",
+  "model": "sonnet",
+  "max_turns": 40,
+  "max_usd": 4
+ },
+ {
+  "run_id": "stack_opus_2",
+  "kind": "stack",
+  "model": "opus",
+  "max_turns": 40,
+  "max_usd": 6
+ },
+ {
+  "run_id": "stack_fable_2",
+  "kind": "stack",
+  "model": "fable",
+  "max_turns": 40,
+  "max_usd": 12
+ },
+ {
+  "run_id": "stack_sonnet_2",
+  "kind": "stack",
+  "model": "sonnet",
+  "max_turns": 40,
+  "max_usd": 4
+ },
+ {
+  "run_id": "pair_opus_2",
+  "kind": "pair",
+  "model": "opus",
+  "max_turns": 40,
+  "max_usd": 6
+ },
+ {
+  "run_id": "pair_fable_2",
+  "kind": "pair",
+  "model": "fable",
+  "max_turns": 40,
+  "max_usd": 12
+ },
+ {
+  "run_id": "pair_sonnet_2",
+  "kind": "pair",
+  "model": "sonnet",
+  "max_turns": 40,
+  "max_usd": 4
+ },
+ {
+  "run_id": "sort_opus_3",
+  "kind": "sort",
+  "model": "opus",
+  "max_turns": 40,
+  "max_usd": 6
+ },
+ {
+  "run_id": "sort_fable_3",
+  "kind": "sort",
+  "model": "fable",
+  "max_turns": 40,
+  "max_usd": 12
+ },
+ {
+  "run_id": "sort_sonnet_3",
+  "kind": "sort",
+  "model": "sonnet",
+  "max_turns": 40,
+  "max_usd": 4
+ },
+ {
+  "run_id": "stack_opus_3",
+  "kind": "stack",
+  "model": "opus",
+  "max_turns": 40,
+  "max_usd": 6
+ },
+ {
+  "run_id": "stack_fable_3",
+  "kind": "stack",
+  "model": "fable",
+  "max_turns": 40,
+  "max_usd": 12
+ },
+ {
+  "run_id": "stack_sonnet_3",
+  "kind": "stack",
+  "model": "sonnet",
+  "max_turns": 40,
+  "max_usd": 4
+ },
+ {
+  "run_id": "pair_opus_3",
+  "kind": "pair",
+  "model": "opus",
+  "max_turns": 40,
+  "max_usd": 6
+ },
+ {
+  "run_id": "pair_fable_3",
+  "kind": "pair",
+  "model": "fable",
+  "max_turns": 40,
+  "max_usd": 12
+ },
+ {
+  "run_id": "pair_sonnet_3",
+  "kind": "pair",
+  "model": "sonnet",
+  "max_turns": 40,
+  "max_usd": 4
+ }
+]

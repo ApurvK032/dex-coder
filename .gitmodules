@@ -1,0 +1,3 @@
+[submodule "third_party/humanoid-vla"]
+	path = third_party/humanoid-vla
+	url = https://github.com/ApurvK032/humanoid-vla.git

@@ -1,0 +1,29 @@
+[project]
+name = "dexcoder"
+version = "0.1.0"
+description = "An LLM agent writes, tests and improves controllers for a simulated humanoid hand, measured on held-out layouts, physics and cameras. Built on humanoid-vla."
+requires-python = ">=3.12"
+# humanoid-vla (the simulator, tasks and human reference) is a git submodule pinned in
+# third_party/humanoid-vla and installed editable; see README for setup.
+dependencies = [
+    "mujoco==3.14.0",
+    "gymnasium>=1.1,<2",
+    "numpy>=2.0,<2.3",
+    "pillow>=10",
+    "imageio[ffmpeg]>=2.30",
+    "anthropic>=2.3,<3",
+    "matplotlib>=3.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

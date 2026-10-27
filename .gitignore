@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.cache/
+
+# Generated run artifacts: agent runs, evaluation episodes, logs, the cost ledger
+/outputs/
+
+# Editors and OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Secrets and local settings
+.env
+.env.*
+*.key
+*.pem
+.claude/
+CLAUDE.local.md
+MUJOCO_LOG.TXT
