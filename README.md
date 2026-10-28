@@ -1,14 +1,17 @@
-# dex-coder
+<h1 align="center">dex-coder</h1>
 
-**An AI agent writes, tests and fixes the controller for a humanoid robot hand: first from exact
-object positions, then from its cameras alone. Every result is measured on layouts and conditions
-the agent never saw, with the dollars it cost.**
+<p align="center"><b>Agentic AI for humanoid robotics: an LLM coding agent writes, debugs and improves
+the perception and control code for a humanoid robot hand, from RGB-D cameras alone, and is scored
+on layouts, physics and sensing it never saw.</b></p>
 
-![Python 3.12](https://img.shields.io/badge/python-3.12-3776ab)
-![MuJoCo 3.14](https://img.shields.io/badge/MuJoCo-3.14-1f6feb)
-![Robot: Unitree G1 + Dex3](https://img.shields.io/badge/robot-Unitree%20G1%20%2B%20Dex3-555)
-![Built on humanoid-vla](https://img.shields.io/badge/built%20on-humanoid--vla-2a78d6)
-![License: MIT](https://img.shields.io/badge/license-MIT-green)
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3.12-3776ab" alt="Python 3.12">
+  <img src="https://img.shields.io/badge/MuJoCo-3.14-1f6feb" alt="MuJoCo 3.14">
+  <img src="https://img.shields.io/badge/robot-Unitree%20G1%20%2B%20Dex3-555" alt="Robot: Unitree G1 + Dex3">
+  <img src="https://img.shields.io/badge/agent-Claude%20(API)-d97757" alt="Agent: Claude (API)">
+  <img src="https://img.shields.io/badge/built%20on-humanoid--vla-2a78d6" alt="Built on humanoid-vla">
+  <img src="https://img.shields.io/badge/license-MIT-green" alt="License: MIT">
+</p>
 
 <p align="center">
   <img src="docs/media/vision_sort_opus_4.gif" width="760" alt="A camera-only controller written by Claude Opus 5.5 sorting a cube into a bin on a held-out layout">
@@ -17,26 +20,52 @@ the agent never saw, with the dollars it cost.**
 never saw. Left: the scene. Right: the robot's head camera; it and the wrist camera are everything
 the controller gets about the cubes.</em></p>
 
+| **5 / 5** | **92-100%** | **~$2.60** | **0** |
+|:---:|:---:|:---:|:---:|
+| camera-only agent runs that produced a working controller | success on unseen layouts, under every held-out condition | API cost per controller, about 17 minutes, no human in the loop | integrity failures: the controller never sees the simulator |
+
 > **Built on [humanoid-vla](https://github.com/ApurvK032/humanoid-vla)**, my project for
 > language-conditioned manipulation with a simulated Unitree G1 and Dex3 hand. dex-coder reuses its
 > MuJoCo scene, tasks, outcome judge and hand-tuned scripted expert (pinned as a submodule) and asks
 > a different question: instead of training a policy, can an LLM agent *program* one?
 
+**Contents:** [Highlights](#highlights) · [Why it matters](#why-it-matters) ·
+[How it works](#how-it-works) · [Results](#results) · [What the agent wrote](#what-the-agent-wrote) ·
+[Reproduce](#reproduce) · [Limitations](#limitations) · [Roadmap](#roadmap) · [Citation](#citation)
+
 ## Highlights
 
-- **From the cameras alone, 5 of 5 runs succeeded.** Each time, Claude Opus 5.5 wrote a controller
-  that sorts 92-100% of unseen layouts under every condition, against 99-100% for a camera-based
-  reference, for about $2.60 and 17 minutes per run.
-- **Robust to conditions it never saw.** Different lighting with shadows, a noisy, slightly
+- **Vision-based manipulation, written by an agent.** From RGB-D cameras alone, 5 of 5 runs of
+  Claude Opus 5.5 produced a controller that sorts 92-100% of unseen layouts under every condition,
+  against 99-100% for a camera-based reference, for about $2.60 and 17 minutes per run.
+- **Out-of-distribution robustness.** Different lighting with shadows, a noisy, slightly
   mis-calibrated and delayed camera, heavier and slippery cubes, weaker motors: no camera
-  controller lost more than 3 points.
-- **On par with a human-written expert.** With exact positions, 6 of 9 sort controllers cannot be
-  told apart from the hand-tuned expert in any condition.
+  controller lost more than 3 points under conditions it was never shown.
+- **On par with a human expert.** With exact object positions, 6 of 9 sort controllers cannot be
+  told apart from humanoid-vla's hand-tuned scripted expert in any condition.
 - **Iteration is what makes it work.** The agent's last controller beat its first in 25 of 27 runs,
-  by 44 points on average.
-- **Cheat-proof by construction.** In the camera study the controller runs in a sandboxed process
-  that holds no simulator and never receives object positions.
-- 32 runs and a pilot, **$93.67** of API spend in total.
+  by 44 points on average: testing and debugging, not the first draft, produce the result.
+- **Cheat-proof, sandboxed evaluation.** Agent-written code runs only in a bubblewrap sandbox; in
+  the camera study the controller lives in its own process that holds no simulator and never
+  receives object positions.
+- **Fully reproducible, fully costed.** 32 runs and a pilot ($93.67 of API spend in total), every
+  agent transcript published, every score re-computed from a clean commit.
+
+## Why it matters
+
+- **Robot programming is slow, expert work.** humanoid-vla's scripted expert took a person several
+  days of tuning. Here an agent gets within a few points of it in minutes, for a few dollars,
+  starting from nothing but the robot's interface.
+- **Agents need honest evaluation.** Coding-agent benchmarks rarely test robustness, isolation or
+  cost. dex-coder scores every controller on held-out layouts, physics, lighting and sensor noise,
+  in a setup where peeking at the simulator is impossible, and reports the dollar cost of every
+  result.
+- **It connects LLM agents and embodied AI.** The loop an engineer uses to build robot software
+  (write, run, read the sensors, fix) is automated end to end, and its output is plain, readable
+  Python that can be inspected, reused or distilled into a learned policy.
+
+**Stack:** Python · MuJoCo 3.14 with GPU (EGL) rendering · Anthropic API (Claude Opus 5.5, Sonnet
+5.5, Fable 5.1) · bubblewrap sandboxing · NumPy · Unitree G1 and Dex3 models from MuJoCo Menagerie
 
 ## How it works
 
@@ -98,6 +127,42 @@ from cubes found by colour and depth in the first head image.*
   notes, does none of this and still scored 97-100%. Code: [results/controllers](results/controllers).
 
 ![Study 2: each controller across the five conditions, and learning curves](results/figures/camera_study.png)
+
+### What the agent wrote
+
+Every controller is plain, readable Python ([all final controllers](results/controllers), and
+[every agent transcript](results/transcripts)). The prompt only warned that lighting, camera noise
+and calibration might differ somewhat at test time. Run 4 answered with this self-calibration,
+which it designed on its own: it measures the table and the known bins in the first head-camera
+image and corrects its own camera offset. It was the only run to score 100% with the knocked, noisy
+camera.
+
+```python
+# results/controllers/vision_sort_opus_4.py (excerpt, written by Claude Opus 5.5)
+def calibrate(self, P, h, s, v, valid):
+    """Table height and xy offset of the head camera measured on the known table and bins."""
+    x, y, z = P[..., 0], P[..., 1], P[..., 2]
+    ztab = self.table
+    try:
+        tab = valid & (x > 0.15) & (x < 0.32) & \
+            (y > -0.4) & (y < 0.0) & (np.abs(z - self.table) < 0.03)
+        if tab.sum() > 500:
+            ztab = float(np.median(z[tab]))
+        offs = []
+        for name, (bx, by) in self.robot.bin_xy.items():
+            m = valid & (z > ztab + 0.015) & (z < ztab + 0.065) & \
+                (np.abs(x - bx) < 0.09) & (np.abs(y - by) < 0.09)
+            if m.sum() > 300:
+                exp = BIN_EXPECT.get(name, (0.0, 0.0))
+                offs.append(P[m][:, :2].mean(0) - np.array([bx, by]) - np.array(exp))
+        off = np.mean(offs, 0) if offs else np.zeros(2)
+        if np.linalg.norm(off) > 0.04:
+            off = np.zeros(2)
+    except Exception:
+        off = np.zeros(2)
+    print('calib ztab', round(ztab, 4), 'off', np.round(off, 4))
+    return ztab, off
+```
 
 ### Study 1: from exact positions
 
@@ -205,6 +270,15 @@ at a per-run and a global spend cap; create `outputs/STOP` to stop every run bef
   humanoid-vla, where a person tuned them.
 - **One setup per study:** one prompt, effort `high`, fixed turn limits (40, and 50 with cameras).
 
+## Roadmap
+
+- **Harder vision tasks:** stacking and two cubes from the cameras alone.
+- **Stress tests:** push lighting, calibration error, depth noise and clutter until controllers
+  break, against a hand-written baseline (no API cost; the controllers already exist).
+- **Distillation:** train humanoid-vla's vision-language-action policy on demonstrations recorded
+  from the agent's camera controllers.
+- **A sound model comparison:** about 10 runs per model and task, enough to rank models.
+
 ## Related work
 
 LLMs that write robot code are established: Code as Policies (Liang et al., 2022) generates policy
@@ -213,6 +287,17 @@ learning. dex-coder's contribution is the measurement: contact-rich grasping wit
 from exact state and from cameras alone, a direct comparison with a hand-written expert on the
 same judge, held-out physics, lighting and sensing, an isolation design in which the controller
 cannot see the simulator, and the dollar cost of every result.
+
+## Citation
+
+```bibtex
+@misc{kushwaha2026dexcoder,
+  title  = {dex-coder: An LLM Agent Writes, Tests and Fixes Controllers for a Humanoid Robot Hand},
+  author = {Kushwaha, Apurv},
+  year   = {2026},
+  url    = {https://github.com/ApurvK032/dex-coder}
+}
+```
 
 ## License
 
